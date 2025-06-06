@@ -1,0 +1,131 @@
+# StyleX<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StyleX - Streetwear</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .background {
+      background: url('https://cdn.pixabay.com/photo/2015/07/15/04/13/graffiti-845647_1280.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -10;
+    }
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.85);
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -5;
+    }
+  </style>
+</head>
+<body class="text-yellow-400 font-sans">
+  <div class="background"></div>
+  <div class="overlay"></div>
+
+  <!-- Header -->
+  <header class="flex items-center justify-between px-6 py-4 border-b border-yellow-500 bg-zinc-950/90 sticky top-0 z-50">
+    <h1 class="text-3xl font-black tracking-wider text-yellow-500">StyleX</h1>
+    <nav class="hidden md:flex gap-8 text-sm">
+      <a href="#home" class="hover:text-yellow-300 transition">Início</a>
+      <a href="#sobre" class="hover:text-yellow-300 transition">Sobre</a>
+      <a href="#produtos" class="hover:text-yellow-300 transition">Produtos</a>
+      <a href="#contato" class="hover:text-yellow-300 transition">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section id="home" class="text-center py-28 px-6">
+    <h2 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
+      Estilo que se impõe
+    </h2>
+    <p class="text-yellow-300 max-w-xl mx-auto mb-10 text-lg">
+      A StyleX traz o melhor da moda streetwear com atitude, autenticidade e originalidade.
+    </p>
+    <a href="#produtos" class="inline-block text-lg px-8 py-4 bg-yellow-500 text-black hover:bg-yellow-400 transition shadow-lg rounded-full">Ver Produtos</a>
+  </section>
+
+  <!-- Destaques -->
+  <section id="destaques" class="grid md:grid-cols-3 gap-8 px-6 py-20">
+    <div class="bg-zinc-900 border border-yellow-600 shadow-md p-6 text-center rounded-xl">
+      <img src="https://acdn-us.mitiendanube.com/stores/002/458/599/products/1731-a375c0b865f7dff72e16839888968653-1024-1024.png" alt="Lançamentos" class="h-48 w-full object-cover rounded-xl mb-4 shadow-inner" />
+      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">Lançamentos</h3>
+      <p class="text-yellow-300 text-sm">Confira as últimas novidades em streetwear.</p>
+    </div>
+    <div class="bg-zinc-900 border border-yellow-600 shadow-md p-6 text-center rounded-xl">
+      <img src="https://cdn.awsli.com.br/600x1000/1714/1714539/produto/289387229/945b10f78b8850fa776d90ff1c0d6be9-up3xgpmon6.jpeg" alt="Mais Vendidos" class="h-48 w-full object-cover rounded-xl mb-4 shadow-inner" />
+      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">Mais vendidos</h3>
+      <p class="text-yellow-300 text-sm">Produtos que estão fazendo sucesso.</p>
+    </div>
+    <div class="bg-zinc-900 border border-yellow-600 shadow-md p-6 text-center rounded-xl">
+      <img src="https://thumbor.cartpanda.com/D9ZofxCH2gg1pdCGeyVYDW5cHOI=/795x0/https://assets.mycartpanda.com/static/products_images/3a/53/f0/1715645511.jpg?v=13252247658" alt="Ofertas" class="h-48 w-full object-cover rounded-xl mb-4 shadow-inner" />
+      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">Ofertas</h3>
+      <p class="text-yellow-300 text-sm">Peças com desconto por tempo limitado.</p>
+    </div>
+  </section>
+
+  <!-- Produtos -->
+  <section id="produtos" class="px-6 py-20 bg-zinc-900/80">
+    <h2 class="text-4xl font-extrabold text-yellow-400 mb-12 text-center">Produtos</h2>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+      <!-- Tênis -->
+      <div class="bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600">
+        <h3 class="text-2xl font-bold text-yellow-400 mb-6">Tênis</h3>
+        <div class="grid grid-cols-1 gap-6">
+          <div class="flex items-center gap-4">
+            <a href="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/51b3ce8f85874fe8b44191a87cac5387_9366/Tenis_Adi2000_Preto_IF8823_011_hover_standard.jpg" target="_blank">
+              <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/51b3ce8f85874fe8b44191a87cac5387_9366/Tenis_Adi2000_Preto_IF8823_011_hover_standard.jpg" class="h-24 w-24 object-cover rounded-xl shadow-inner" />
+            </a>
+            <div>
+              <h4 class="text-yellow-400 font-semibold">Tênis Adidas Preto</h4>
+              <a href="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/51b3ce8f85874fe8b44191a87cac5387_9366/Tenis_Adi2000_Preto_IF8823_011_hover_standard.jpg" target="_blank" class="inline-block mt-2 px-4 py-1 bg-yellow-500 text-black rounded-full font-semibold hover:bg-yellow-400 transition">Ver tênis</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calças -->
+      <div class="bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600">
+        <h3 class="text-2xl font-bold text-yellow-400 mb-6">Calças</h3>
+        <div class="grid grid-cols-1 gap-6">
+          <div class="flex items-center gap-4">
+            <a href="https://lojaloko.com/wp-content/uploads/2024/08/WhatsApp-Image-2024-10-22-at-13.01.37-14-scaled.jpeg" target="_blank">
+              <img src="https://lojaloko.com/wp-content/uploads/2024/08/WhatsApp-Image-2024-10-22-at-13.01.37-14-scaled.jpeg" class="h-24 w-24 object-cover rounded-xl shadow-inner" />
+            </a>
+            <div>
+              <h4 class="text-yellow-400 font-semibold">Calça Jeans Streetwear</h4>
+              <a href="https://lojaloko.com/wp-content/uploads/2024/08/WhatsApp-Image-2024-10-22-at-13.01.37-14-scaled.jpeg" target="_blank" class="inline-block mt-2 px-4 py-1 bg-yellow-500 text-black rounded-full font-semibold hover:bg-yellow-400 transition">Ver calça</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Camisetas -->
+      <div class="bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600">
+        <h3 class="text-2xl font-bold text-yellow-400 mb-6">Camisetas</h3>
+        <div class="grid grid-cols-1 gap-6">
+          <div class="flex items-center gap-4">
+            <a href="https://cdn.awsli.com.br/600x1000/1714/1714539/produto/289387229/945b10f78b8850fa776d90ff1c0d6be9-up3xgpmon6.jpeg" target="_blank">
+              <img src="https://cdn.awsli.com.br/600x1000/1714/1714539/produto/289387229/945b10f78b8850fa776d90ff1c0d6be9-up3xgpmon6.jpeg" class="h-24 w-24 object-cover rounded-xl shadow-inner" />
+            </a>
+            <div>
+              <h4 class="text-yellow-400 font-semibold">Camiseta StyleX Preta</h4>
+              <a href="https://cdn.awsli.com.br/600x1000/1714/1714539/produto/289387229/945b10f78b8850fa776d90ff1c0d6be9-up3xgpmon6.jpeg" target="_blank" class="inline-block mt-2 px-4 py-1 bg-yellow-500 text-black rounded-full font-semibold hover:bg-yellow-400 transition">Ver camiseta</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>
