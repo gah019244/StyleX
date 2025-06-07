@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StyleX - Streetwear</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     body {
       margin: 0;
@@ -56,32 +55,49 @@
 
   <!-- Destaques -->
   <section id="destaques" class="grid md:grid-cols-3 gap-8 px-6 py-20">
-    <!-- Conteúdo dos destaques aqui (mantido como estava) -->
+    <div class="bg-zinc-900 border border-yellow-600 shadow-md p-6 text-center rounded-xl">
+      <img src="https://acdn-us.mitiendanube.com/stores/002/458/599/products/1731-a375c0b865f7dff72e16839888968653-1024-1024.png" alt="Lançamentos" class="h-48 w-full object-cover rounded-xl mb-4 shadow-inner" />
+      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">Lançamentos</h3>
+      <p class="text-yellow-300 text-sm">Confira as últimas novidades em streetwear.</p>
+    </div>
+    <div class="bg-zinc-900 border border-yellow-600 shadow-md p-6 text-center rounded-xl">
+      <img src="https://cdn.awsli.com.br/600x1000/1714/1714539/produto/289387229/945b10f78b8850fa776d90ff1c0d6be9-up3xgpmon6.jpeg" alt="Mais Vendidos" class="h-48 w-full object-cover rounded-xl mb-4 shadow-inner" />
+      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">Mais vendidos</h3>
+      <p class="text-yellow-300 text-sm">Produtos que estão fazendo sucesso.</p>
+    </div>
+    <div class="bg-zinc-900 border border-yellow-600 shadow-md p-6 text-center rounded-xl">
+      <img src="https://thumbor.cartpanda.com/D9ZofxCH2gg1pdCGeyVYDW5cHOI=/795x0/https://assets.mycartpanda.com/static/products_images/3a/53/f0/1715645511.jpg?v=13252247658" alt="Ofertas" class="h-48 w-full object-cover rounded-xl mb-4 shadow-inner" />
+      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">Ofertas</h3>
+      <p class="text-yellow-300 text-sm">Peças com desconto por tempo limitado.</p>
+    </div>
   </section>
 
-  <!-- Produtos -->
+  <!-- Produtos (Sem opções) -->
   <section id="produtos" class="px-6 py-20 bg-zinc-900/80">
-    <!-- Conteúdo dos produtos aqui (mantido como estava) -->
+    <h2 class="text-4xl font-extrabold text-yellow-400 mb-12 text-center">Produtos</h2>
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <!-- Tênis -->
+      <div class="bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600">
+        <h3 class="text-2xl font-bold text-yellow-400 mb-4">Tênis</h3>
+        <p class="text-yellow-300 text-sm">Confira nossos modelos exclusivos de tênis streetwear.</p>
+      </div>
+      <!-- Calças -->
+      <div class="bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600">
+        <h3 class="text-2xl font-bold text-yellow-400 mb-4">Calças</h3>
+        <p class="text-yellow-300 text-sm">Estilo urbano com conforto e autenticidade nas nossas calças.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Rodapé com redes sociais -->
-  <footer class="bg-zinc-950 border-t border-yellow-600 py-8 text-center">
-    <h3 class="text-yellow-400 text-xl font-semibold mb-4">Siga a StyleX</h3>
-    <div class="flex justify-center gap-6 text-2xl text-yellow-400 mb-4">
-      <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" class="hover:text-yellow-300 transition">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook" class="hover:text-yellow-300 transition">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok" class="hover:text-yellow-300 transition">
-        <i class="fab fa-tiktok"></i>
-      </a>
-      <a href="https://wa.me/5599999999999" target="_blank" aria-label="WhatsApp" class="hover:text-yellow-300 transition">
-        <i class="fab fa-whatsapp"></i>
-      </a>
+  <footer class="bg-zinc-950 border-t border-yellow-500 text-center py-6">
+    <p class="mb-4 text-yellow-300">Siga a StyleX nas redes sociais</p>
+    <div class="flex justify-center gap-6 text-yellow-400 text-2xl">
+      <a href="https://www.instagram.com" target="_blank" rel="noopener" title="Instagram">📸</a>
+      <a href="https://www.facebook.com" target="_blank" rel="noopener" title="Facebook">📘</a>
+      <a href="https://www.tiktok.com" target="_blank" rel="noopener" title="TikTok">🎵</a>
+      <a href="https://wa.me/5599999999999" target="_blank" rel="noopener" title="WhatsApp">📱</a>
     </div>
-    <p class="text-yellow-300 text-sm">© 2025 StyleX. Todos os direitos reservados.</p>
   </footer>
 </body>
 </html>
