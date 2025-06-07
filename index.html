@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StyleX - Streetwear</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://kit.fontawesome.com/a2e0f1f0d9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     body {
       margin: 0;
@@ -54,26 +54,34 @@
     <a href="#produtos" class="inline-block text-lg px-8 py-4 bg-yellow-500 text-black hover:bg-yellow-400 transition shadow-lg rounded-full">Ver Produtos</a>
   </section>
 
-  <!-- Outros blocos (produtos etc) continuam aqui... -->
+  <!-- Destaques -->
+  <section id="destaques" class="grid md:grid-cols-3 gap-8 px-6 py-20">
+    <!-- Conteúdo dos destaques aqui (mantido como estava) -->
+  </section>
+
+  <!-- Produtos -->
+  <section id="produtos" class="px-6 py-20 bg-zinc-900/80">
+    <!-- Conteúdo dos produtos aqui (mantido como estava) -->
+  </section>
 
   <!-- Rodapé com redes sociais -->
-  <footer class="bg-zinc-950 text-yellow-400 py-10 px-6 text-center border-t border-yellow-700">
-    <h4 class="text-xl font-semibold mb-4">Siga a StyleX</h4>
-    <div class="flex justify-center gap-6 text-3xl mb-4">
-      <a href="https://www.instagram.com/seu_instagram" target="_blank" class="hover:text-yellow-300 transition">
+  <footer class="bg-zinc-950 border-t border-yellow-600 py-8 text-center">
+    <h3 class="text-yellow-400 text-xl font-semibold mb-4">Siga a StyleX</h3>
+    <div class="flex justify-center gap-6 text-2xl text-yellow-400 mb-4">
+      <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" class="hover:text-yellow-300 transition">
         <i class="fab fa-instagram"></i>
       </a>
-      <a href="https://www.facebook.com/seu_facebook" target="_blank" class="hover:text-yellow-300 transition">
-        <i class="fab fa-facebook"></i>
+      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook" class="hover:text-yellow-300 transition">
+        <i class="fab fa-facebook-f"></i>
       </a>
-      <a href="https://www.tiktok.com/@seu_usuario" target="_blank" class="hover:text-yellow-300 transition">
+      <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok" class="hover:text-yellow-300 transition">
         <i class="fab fa-tiktok"></i>
       </a>
-      <a href="https://wa.me/5599999999999" target="_blank" class="hover:text-yellow-300 transition">
+      <a href="https://wa.me/5599999999999" target="_blank" aria-label="WhatsApp" class="hover:text-yellow-300 transition">
         <i class="fab fa-whatsapp"></i>
       </a>
     </div>
-    <p class="text-sm text-yellow-500">© 2025 StyleX. Todos os direitos reservados.</p>
+    <p class="text-yellow-300 text-sm">© 2025 StyleX. Todos os direitos reservados.</p>
   </footer>
 </body>
 </html>
