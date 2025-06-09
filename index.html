@@ -4,216 +4,99 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StyleX - Streetwear</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Orbitron&family=Russo+One&display=swap" rel="stylesheet" />
-  
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Orbitron', sans-serif;
-    }
-    h1, h2, h3 {
-      font-family: 'Anton', sans-serif;
-    }
-    nav a, nav button {
-      font-family: 'Russo One', sans-serif;
-    }
-    p, li {
-      font-family: 'Orbitron', sans-serif;
-    }
-    button, a.inline-block, a:hover {
-      font-family: 'Bangers', cursive;
-    }
-
-    .background {
-      background: url('https://cdn.pixabay.com/photo/2015/07/15/04/13/graffiti-845647_1280.jpg') no-repeat center center fixed;
-      background-size: cover;
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      z-index: -10;
-    }
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.85);
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      z-index: -5;
-    }
-
-    /* Carrinho de compras */
-    #carrinho {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background-color: #ffcc00;
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: bold;
-      z-index: 100;
-    }
-
-    #carrinho-lista {
-      position: fixed;
-      top: 100px;
-      right: 20px;
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      display: none;
-      max-width: 300px;
-      width: 100%;
-    }
-
-    #carrinho-lista h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-
-    #carrinho-lista ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    #carrinho-lista ul li {
-      margin-bottom: 10px;
-      font-size: 1rem;
-    }
-
-    #carrinho-lista button {
-      background-color: #ffcc00;
-      border: none;
-      color: #000;
-      font-weight: bold;
-      padding: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 20px;
+      font-family: sans-serif;
     }
   </style>
 </head>
-<body class="text-yellow-400 font-sans">
-  <div class="background"></div>
-  <div class="overlay"></div>
-
-  <!-- Carrinho de Compras -->
-  <div id="carrinho" onclick="mostrarCarrinho()">
-    Carrinho (0)
+<body class="bg-zinc-900 text-yellow-300">
+  <!-- Carrinho fixo -->
+  <div class="fixed top-4 right-4 z-50">
+    <button onclick="mostrarCarrinho()" class="bg-yellow-500 text-black px-4 py-2 rounded-full shadow-lg">
+      🛒 Carrinho (<span id="quantidade-carrinho">0</span>)
+    </button>
   </div>
-
-  <div id="carrinho-lista">
-    <h3>Carrinho de Compras</h3>
-    <ul id="carrinho-itens">
-      <!-- Itens do Carrinho serão listados aqui -->
-    </ul>
-    <button onclick="finalizarCompra()">Finalizar Compra</button>
-  </div>
-
-  <!-- Header -->
-  <header class="flex items-center justify-between px-6 py-4 border-b border-yellow-500 bg-zinc-950/90 sticky top-0 z-50">
-    <h1 class="text-3xl font-black tracking-wider text-yellow-500">StyleX</h1>
-    <nav class="hidden md:flex gap-8 text-sm">
-      <a href="#home" class="hover:text-yellow-300 transition">Início</a>
-      <a href="#sobre" class="hover:text-yellow-300 transition">Sobre</a>
-      <a href="#produtos" class="hover:text-yellow-300 transition">Produtos</a>
-      <button onclick="toggleContatos()" class="hover:text-yellow-300 transition">Contato</button>
-    </nav>
-  </header>
-
-  <!-- Home -->
-  <section id="home" class="text-center py-28 px-6">
-    <h2 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
-      Estilo que se impõe
-    </h2>
-    <p class="text-yellow-300 max-w-xl mx-auto mb-10 text-lg">
-      A StyleX traz o melhor da moda streetwear com atitude, autenticidade e originalidade.
-    </p>
-    <a href="#produtos" class="inline-block text-lg px-8 py-4 bg-yellow-500 text-black hover:bg-yellow-400 transition shadow-lg rounded-full">Ver Produtos</a>
-  </section>
 
   <!-- Produtos -->
-  <section id="produtos" class="px-6 py-20 bg-zinc-900/80">
-    <h2 class="text-4xl font-extrabold text-yellow-400 mb-12 text-center">Produtos</h2>
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+  <section class="px-6 py-20 max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold text-yellow-400 text-center mb-12">Produtos</h2>
+    <div class="grid md:grid-cols-2 gap-8">
       <!-- Produto 1 -->
       <div class="bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600">
-        <img src="https://imgcentauro-a.akamaihd.net/1366x1366/M0F-4412-026-01.jpg" alt="Tênis Urbano X" class="w-full h-48 object-cover rounded-lg mb-4" />
-        <h3 class="text-2xl font-bold text-yellow-400 mb-2">Tênis Urbano X</h3>
-        <p class="text-yellow-300 text-sm mb-4">Modelo exclusivo de tênis ideal para o estilo streetwear, com design único e conforto para o dia a dia.</p>
-        <p class="text-yellow-500 font-bold mb-4">R$ 349,90</p>
-        <button onclick="adicionarCarrinho('Tênis Urbano X', 'R$ 349,90')" class="w-full py-2 bg-yellow-500 text-black font-bold hover:bg-yellow-400 transition rounded-lg">Adicionar ao Carrinho</button>
+        <img src="https://static.netshoes.com.br/produtos/tenis-nike-air-max-excee-masculino/26/HZM-2781-026/HZM-2781-026_zoom1.jpg" alt="Tênis Street Classic" class="h-48 w-full object-cover rounded-lg mb-4">
+        <h3 class="text-2xl font-bold text-yellow-400 mb-2">Tênis Street Classic</h3>
+        <p class="mb-1">Estilo urbano com conforto.</p>
+        <p class="mb-4 font-semibold text-yellow-500">R$ 299,90</p>
+        <button onclick="adicionarCarrinho('Tênis Street Classic', 299.90)" class="bg-yellow-500 text-black px-4 py-2 rounded-full hover:bg-yellow-400">Adicionar ao carrinho</button>
       </div>
 
       <!-- Produto 2 -->
       <div class="bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600">
-        <img src="https://imgcentauro-a.akamaihd.net/1366x1366/975177J01.jpg" alt="Calça Cargo Black" class="w-full h-48 object-cover rounded-lg mb-4" />
+        <img src="https://images.tcdn.com.br/img/img_prod/1056516/calca_cargo_masculina_preta_streetwear_109_1_20210405095818.jpg" alt="Calça Cargo Black" class="h-48 w-full object-cover rounded-lg mb-4">
         <h3 class="text-2xl font-bold text-yellow-400 mb-2">Calça Cargo Black</h3>
-        <p class="text-yellow-300 text-sm mb-4">Calça com estilo streetwear, ajustável e com bolsos práticos para um visual moderno e confortável.</p>
-        <p class="text-yellow-500 font-bold mb-4">R$ 179,90</p>
-        <button onclick="adicionarCarrinho('Calça Cargo Black', 'R$ 179,90')" class="w-full py-2 bg-yellow-500 text-black font-bold hover:bg-yellow-400 transition rounded-lg">Adicionar ao Carrinho</button>
-      </div>
-
-      <!-- Produto 3 -->
-      <div class="bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600">
-        <img src="https://images.tcdn.com.br/img/img_prod/1152049/calca_cargo_masculina_estilo_streetwear_3523_1_b63c57b96b185a3e75aeb2fc3b62d659.jpg" alt="Calça Oversize Street" class="w-full h-48 object-cover rounded-lg mb-4" />
-        <h3 class="text-2xl font-bold text-yellow-400 mb-2">Calça Oversize Street</h3>
-        <p class="text-yellow-300 text-sm mb-4">A calça perfeita para quem busca estilo e conforto com um toque de atitude. Ideal para looks urbanos e descontraídos.</p>
-        <p class="text-yellow-500 font-bold mb-4">R$ 219,90</p>
-        <button onclick="adicionarCarrinho('Calça Oversize Street', 'R$ 219,90')" class="w-full py-2 bg-yellow-500 text-black font-bold hover:bg-yellow-400 transition rounded-lg">Adicionar ao Carrinho</button>
+        <p class="mb-1">Conforto e estilo para todos os rolês.</p>
+        <p class="mb-4 font-semibold text-yellow-500">R$ 199,90</p>
+        <button onclick="adicionarCarrinho('Calça Cargo Black', 199.90)" class="bg-yellow-500 text-black px-4 py-2 rounded-full hover:bg-yellow-400">Adicionar ao carrinho</button>
       </div>
     </div>
   </section>
 
-  <!-- Rodapé -->
-  <footer class="bg-zinc-950 border-t border-yellow-500 text-center py-6">
-    <p class="mb-4 text-yellow-300">Siga a StyleX nas redes sociais</p>
-    <div class="flex justify-center gap-6 text-yellow-400 text-2xl">
-      <a href="https://www.instagram.com/stylex140/" target="_blank" rel="noopener" title="Instagram">📸</a>
-      <a href="https://www.facebook.com/profile.php?id=61573863672549" target="_blank" rel="noopener" title="Facebook">📘</a>
-      <a href="https://www.tiktok.com/@style.x.estilo.e.atitude" target="_blank" rel="noopener" title="TikTok">🎵</a>
-      <a href="https://wa.me/5599999999999" target="_blank" rel="noopener" title="WhatsApp">📱</a>
+  <!-- Modal do Carrinho -->
+  <div id="modal-carrinho" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex justify-center items-center hidden z-50">
+    <div class="bg-zinc-800 text-yellow-300 p-6 rounded-xl max-w-lg w-full">
+      <h3 class="text-2xl font-bold mb-4">Seu Carrinho</h3>
+      <ul id="lista-carrinho" class="mb-4 space-y-2"></ul>
+      <p class="font-semibold text-yellow-500 mb-4">Total: R$ <span id="total-carrinho">0.00</span></p>
+      <div class="flex justify-between">
+        <button onclick="fecharCarrinho()" class="px-4 py-2 bg-red-600 rounded hover:bg-red-500">Fechar</button>
+        <a id="finalizarLink" href="#" target="_blank" class="px-4 py-2 bg-green-500 text-black rounded hover:bg-green-400 font-bold">Finalizar no WhatsApp</a>
+      </div>
     </div>
-  </footer>
+  </div>
 
   <script>
-    let carrinho = [];
+    const carrinho = [];
 
-    // Função para mostrar o carrinho
+    function adicionarCarrinho(produto, preco) {
+      carrinho.push({ produto, preco });
+      atualizarCarrinho();
+      alert(`Deseja continuar comprando "${produto}"? Ele foi adicionado ao carrinho.`);
+    }
+
+    function atualizarCarrinho() {
+      document.getElementById('quantidade-carrinho').textContent = carrinho.length;
+    }
+
     function mostrarCarrinho() {
-      const carrinhoLista = document.getElementById('carrinho-lista');
-      carrinhoLista.style.display = (carrinhoLista.style.display === 'none' || carrinhoLista.style.display === '') ? 'block' : 'none';
-      mostrarItensCarrinho();
-    }
+      const lista = document.getElementById('lista-carrinho');
+      const totalEl = document.getElementById('total-carrinho');
+      const finalizarLink = document.getElementById('finalizarLink');
 
-    // Adicionar produto ao carrinho
-    function adicionarCarrinho(nomeProduto, precoProduto) {
-      carrinho.push({ nome: nomeProduto, preco: precoProduto });
-      document.getElementById('carrinho').textContent = `Carrinho (${carrinho.length})`;
-    }
-
-    // Mostrar os itens do carrinho
-    function mostrarItensCarrinho() {
-      const carrinhoItens = document.getElementById('carrinho-itens');
-      carrinhoItens.innerHTML = ''; // Limpar a lista
+      lista.innerHTML = '';
+      let total = 0;
       carrinho.forEach(item => {
         const li = document.createElement('li');
-        li.textContent = `${item.nome} - ${item.preco}`;
-        carrinhoItens.appendChild(li);
+        li.textContent = `${item.produto} - R$ ${item.preco.toFixed(2)}`;
+        lista.appendChild(li);
+        total += item.preco;
       });
+      totalEl.textContent = total.toFixed(2);
+
+      // Monta mensagem para WhatsApp
+      let mensagem = 'Olá! Quero finalizar meu pedido com os seguintes itens:%0A';
+      carrinho.forEach(item => {
+        mensagem += `• ${item.produto} - R$ ${item.preco.toFixed(2)}%0A`;
+      });
+      mensagem += `%0ATotal: R$ ${total.toFixed(2)}`;
+      finalizarLink.href = `https://wa.me/5519987071339?text=${mensagem}`;
+
+      document.getElementById('modal-carrinho').classList.remove('hidden');
     }
 
-    // Finalizar compra e redirecionar para WhatsApp
-    function finalizarCompra() {
-      const produtos = carrinho.map(item => `${item.nome} por ${item.preco}`).join(', ');
-      const mensagem = encodeURIComponent(`Gostaria de comprar os seguintes produtos: ${produtos}.`);
-      window.open(`https://wa.me/5599999999999?text=${mensagem}`, '_blank');
+    function fecharCarrinho() {
+      document.getElementById('modal-carrinho').classList.add('hidden');
     }
   </script>
 </body>
