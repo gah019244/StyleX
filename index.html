@@ -4,34 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StyleX - Streetwear</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Orbitron&family=Russo+One&display=swap" rel="stylesheet" />
-  
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Permanent Marker', cursive;
     }
-    h1, h2, h3 {
-      /* Títulos com Anton */
-      font-family: 'Anton', sans-serif;
-    }
-    nav a, nav button {
-      /* Menu e subtítulos com Russo One */
-      font-family: 'Russo One', sans-serif;
-    }
-    p, li {
-      /* Texto normal com Orbitron */
-      font-family: 'Orbitron', sans-serif;
-    }
-    /* Botões e links que quiser destacar com Bangers */
-    button, a.inline-block, a:hover {
-      font-family: 'Bangers', cursive;
-    }
-
     .background {
       background: url('https://cdn.pixabay.com/photo/2015/07/15/04/13/graffiti-845647_1280.jpg') no-repeat center center fixed;
       background-size: cover;
@@ -53,132 +33,10 @@
   <div class="background"></div>
   <div class="overlay"></div>
 
+  <!-- Logo no topo -->
+  <div class="flex justify-center pt-4">
+    <img src="/mnt/data/8b4d7a99-0c62-4c01-b925-6f3c19936889.png" alt="Logo StyleX" class="h-32">
+  </div>
+
   <!-- Header -->
-  <header class="flex items-center justify-between px-6 py-4 border-b border-yellow-500 bg-zinc-950/90 sticky top-0 z-50">
-    <h1 class="text-3xl font-black tracking-wider text-yellow-500">StyleX</h1>
-    <nav class="hidden md:flex gap-8 text-sm">
-      <a href="#home" class="hover:text-yellow-300 transition">Início</a>
-      <a href="#sobre" class="hover:text-yellow-300 transition">Sobre</a>
-      <a href="#produtos" class="hover:text-yellow-300 transition">Produtos</a>
-      <button onclick="toggleContatos()" class="hover:text-yellow-300 transition">Contato</button>
-    </nav>
-    <!-- Painel de Redes Sociais -->
-    <div id="redes-sociais" class="hidden absolute right-6 top-20 bg-zinc-900 border border-yellow-600 rounded-xl px-6 py-4 text-left z-50 shadow-xl">
-      <p class="text-yellow-400 font-bold mb-2">Nossas redes:</p>
-      <ul class="space-y-2 text-yellow-300 text-sm">
-        <li><a href="https://www.instagram.com/stylex140/" target="_blank" class="hover:text-yellow-100">📸 Instagram</a></li>
-        <li><a href="https://www.facebook.com/profile.php?id=61573863672549" target="_blank" class="hover:text-yellow-100">📘 Facebook</a></li>
-        <li><a href="https://www.tiktok.com/@style.x.estilo.e.atitude" target="_blank" class="hover:text-yellow-100">🎵 TikTok</a></li>
-        <li><a href="https://wa.me/5599999999999" target="_blank" class="hover:text-yellow-100">📱 WhatsApp</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <!-- Home -->
-  <section id="home" class="text-center py-28 px-6">
-    <h2 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
-      Estilo que se impõe
-    </h2>
-    <p class="text-yellow-300 max-w-xl mx-auto mb-10 text-lg">
-      A StyleX traz o melhor da moda streetwear com atitude, autenticidade e originalidade.
-    </p>
-    <a href="#produtos" class="inline-block text-lg px-8 py-4 bg-yellow-500 text-black hover:bg-yellow-400 transition shadow-lg rounded-full">Ver Produtos</a>
-  </section>
-
-  <!-- Sobre -->
-  <section id="sobre" class="px-6 py-20 bg-zinc-900/90">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl font-extrabold text-yellow-400 mb-8">Sobre a StyleX</h2>
-      <p class="text-yellow-300 text-lg leading-relaxed mb-6">
-        A StyleX nasceu nas ruas, inspirada pela atitude, pela música e pela arte urbana. Somos mais que uma marca de roupas: somos uma expressão de personalidade e liberdade.
-      </p>
-      <p class="text-yellow-400 text-md leading-relaxed mb-4">
-        Aqui, cada peça é escolhida com cuidado para garantir qualidade, conforto e estilo. Nosso compromisso é entregar produtos que representem você — com autenticidade e confiança.
-      </p>
-      <p class="text-yellow-300 font-semibold">
-        Pode confiar: a StyleX veste sua identidade. Do pedido à entrega, estamos do seu lado.
-      </p>
-    </div>
-  </section>
-
-  <!-- Destaques -->
-  <section id="destaques" class="grid md:grid-cols-3 gap-8 px-6 py-20">
-    <div class="bg-zinc-900 border border-yellow-600 shadow-md p-6 text-center rounded-xl">
-      <img src="https://acdn-us.mitiendanube.com/stores/002/458/599/products/1731-a375c0b865f7dff72e16839888968653-1024-1024.png" alt="Lançamentos" class="h-48 w-full object-cover rounded-xl mb-4 shadow-inner" />
-      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">Lançamentos</h3>
-      <p class="text-yellow-300 text-sm">Confira as últimas novidades em streetwear.</p>
-    </div>
-    <div class="bg-zinc-900 border border-yellow-600 shadow-md p-6 text-center rounded-xl">
-      <img src="https://cdn.awsli.com.br/600x1000/1714/1714539/produto/289387229/945b10f78b8850fa776d90ff1c0d6be9-up3xgpmon6.jpeg" alt="Mais Vendidos" class="h-48 w-full object-cover rounded-xl mb-4 shadow-inner" />
-      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">Mais vendidos</h3>
-      <p class="text-yellow-300 text-sm">Produtos que estão fazendo sucesso.</p>
-    </div>
-    <div class="bg-zinc-900 border border-yellow-600 shadow-md p-6 text-center rounded-xl">
-      <img src="https://thumbor.cartpanda.com/D9ZofxCH2gg1pdCGeyVYDW5cHOI=/795x0/https://assets.mycartpanda.com/static/products_images/3a/53/f0/1715645511.jpg?v=13252247658" alt="Ofertas" class="h-48 w-full object-cover rounded-xl mb-4 shadow-inner" />
-      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">Ofertas</h3>
-      <p class="text-yellow-300 text-sm">Peças com desconto por tempo limitado.</p>
-    </div>
-  </section>
-
-  <!-- Produtos -->
-  <section id="produtos" class="px-6 py-20 bg-zinc-900/80">
-    <h2 class="text-4xl font-extrabold text-yellow-400 mb-12 text-center">Produtos</h2>
-    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-      <!-- Tênis -->
-      <div class="bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600">
-        <h3 class="text-2xl font-bold text-yellow-400 mb-4">Tênis</h3>
-        <p class="text-yellow-300 text-sm mb-4">Confira nossos modelos exclusivos de tênis streetwear.</p>
-        <ul class="space-y-2">
-          <li><button onclick="mostrarMensagem()" class="hover:text-yellow-200 underline">Tênis Street Classic</button></li>
-          <li><button onclick="mostrarMensagem()" class="hover:text-yellow-200 underline">Tênis Urbano X</button></li>
-        </ul>
-      </div>
-      <!-- Calças -->
-      <div class="bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600">
-        <h3 class="text-2xl font-bold text-yellow-400 mb-4">Calças</h3>
-        <p class="text-yellow-300 text-sm mb-4">Estilo urbano com conforto e autenticidade nas nossas calças.</p>
-        <ul class="space-y-2">
-          <li><button onclick="mostrarMensagem()" class="hover:text-yellow-200 underline">Calça Cargo Black</button></li>
-          <li><button onclick="mostrarMensagem()" class="hover:text-yellow-200 underline">Calça Oversize Street</button></li>
-        </ul>
-      </div>
-    </div>
-    <div id="mensagem-compra" class="hidden mt-10 text-center">
-      <p class="text-yellow-300 text-lg font-semibold mb-4">
-        Finalize sua compra conosco no nosso WhatsApp:
-      </p>
-      <a href="https://wa.me/5599999999999" target="_blank" class="text-yellow-500 font-bold text-xl hover:text-yellow-300 underline">
-        📱 WhatsApp StyleX
-      </a>
-    </div>
-  </section>
-
-  <!-- Rodapé com redes sociais -->
-  <footer class="bg-zinc-950 border-t border-yellow-500 text-center py-6">
-    <p class="mb-4 text-yellow-300">Siga a StyleX nas redes sociais</p>
-    <div class="flex justify-center gap-6 text-yellow-400 text-2xl">
-      <a href="https://www.instagram.com/stylex140/" target="_blank" rel="noopener" title="Instagram">📸</a>
-      <a href="https://www.facebook.com/profile.php?id=61573863672549" target="_blank" rel="noopener" title="Facebook">📘</a>
-      <a href="https://www.tiktok.com/@style.x.estilo.e.atitude" target="_blank" rel="noopener" title="TikTok">🎵</a>
-      <a href="https://wa.me/5599999999999" target="_blank" rel="noopener" title="WhatsApp">📱</a>
-    </div>
-  </footer>
-
-  <script>
-    function toggleContatos() {
-      const painel = document.getElementById('redes-sociais');
-      if (painel.classList.contains('hidden')) {
-        painel.classList.remove('hidden');
-      } else {
-        painel.classList.add('hidden');
-      }
-    }
-
-    function mostrarMensagem() {
-      const mensagem = document.getElementById('mensagem-compra');
-      mensagem.classList.remove('hidden');
-      mensagem.scrollIntoView({behavior: 'smooth'});
-    }
-  </script>
-</body>
-</html>
+  <header class="flex ite
