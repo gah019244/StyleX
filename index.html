@@ -43,11 +43,78 @@
       height: 100%;
       z-index: -5;
     }
+
+    /* Carrinho de compras */
+    #carrinho {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #ffcc00;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 100;
+    }
+
+    #carrinho-lista {
+      position: fixed;
+      top: 100px;
+      right: 20px;
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      display: none;
+      max-width: 300px;
+      width: 100%;
+    }
+
+    #carrinho-lista h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    #carrinho-lista ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #carrinho-lista ul li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    #carrinho-lista button {
+      background-color: #ffcc00;
+      border: none;
+      color: #000;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body class="text-yellow-400 font-sans">
   <div class="background"></div>
   <div class="overlay"></div>
+
+  <!-- Carrinho de Compras -->
+  <div id="carrinho" onclick="mostrarCarrinho()">
+    Carrinho (0)
+  </div>
+
+  <div id="carrinho-lista">
+    <h3>Carrinho de Compras</h3>
+    <ul id="carrinho-itens">
+      <!-- Itens do Carrinho serão listados aqui -->
+    </ul>
+    <button onclick="finalizarCompra()">Finalizar Compra</button>
+  </div>
 
   <!-- Header -->
   <header class="flex items-center justify-between px-6 py-4 border-b border-yellow-500 bg-zinc-950/90 sticky top-0 z-50">
@@ -58,15 +125,6 @@
       <a href="#produtos" class="hover:text-yellow-300 transition">Produtos</a>
       <button onclick="toggleContatos()" class="hover:text-yellow-300 transition">Contato</button>
     </nav>
-    <div id="redes-sociais" class="hidden absolute right-6 top-20 bg-zinc-900 border border-yellow-600 rounded-xl px-6 py-4 text-left z-50 shadow-xl">
-      <p class="text-yellow-400 font-bold mb-2">Nossas redes:</p>
-      <ul class="space-y-2 text-yellow-300 text-sm">
-        <li><a href="https://www.instagram.com/stylex140/" target="_blank" class="hover:text-yellow-100">📸 Instagram</a></li>
-        <li><a href="https://www.facebook.com/profile.php?id=61573863672549" target="_blank" class="hover:text-yellow-100">📘 Facebook</a></li>
-        <li><a href="https://www.tiktok.com/@style.x.estilo.e.atitude" target="_blank" class="hover:text-yellow-100">🎵 TikTok</a></li>
-        <li><a href="https://wa.me/5599999999999" target="_blank" class="hover:text-yellow-100">📱 WhatsApp</a></li>
-      </ul>
-    </div>
   </header>
 
   <!-- Home -->
@@ -90,7 +148,7 @@
         <h3 class="text-2xl font-bold text-yellow-400 mb-2">Tênis Urbano X</h3>
         <p class="text-yellow-300 text-sm mb-4">Modelo exclusivo de tênis ideal para o estilo streetwear, com design único e conforto para o dia a dia.</p>
         <p class="text-yellow-500 font-bold mb-4">R$ 349,90</p>
-        <button onclick="mostrarMensagem('Tênis Urbano X', 'R$ 349,90')" class="w-full py-2 bg-yellow-500 text-black font-bold hover:bg-yellow-400 transition rounded-lg">Ver mais</button>
+        <button onclick="adicionarCarrinho('Tênis Urbano X', 'R$ 349,90')" class="w-full py-2 bg-yellow-500 text-black font-bold hover:bg-yellow-400 transition rounded-lg">Adicionar ao Carrinho</button>
       </div>
 
       <!-- Produto 2 -->
@@ -99,7 +157,7 @@
         <h3 class="text-2xl font-bold text-yellow-400 mb-2">Calça Cargo Black</h3>
         <p class="text-yellow-300 text-sm mb-4">Calça com estilo streetwear, ajustável e com bolsos práticos para um visual moderno e confortável.</p>
         <p class="text-yellow-500 font-bold mb-4">R$ 179,90</p>
-        <button onclick="mostrarMensagem('Calça Cargo Black', 'R$ 179,90')" class="w-full py-2 bg-yellow-500 text-black font-bold hover:bg-yellow-400 transition rounded-lg">Ver mais</button>
+        <button onclick="adicionarCarrinho('Calça Cargo Black', 'R$ 179,90')" class="w-full py-2 bg-yellow-500 text-black font-bold hover:bg-yellow-400 transition rounded-lg">Adicionar ao Carrinho</button>
       </div>
 
       <!-- Produto 3 -->
@@ -108,14 +166,8 @@
         <h3 class="text-2xl font-bold text-yellow-400 mb-2">Calça Oversize Street</h3>
         <p class="text-yellow-300 text-sm mb-4">A calça perfeita para quem busca estilo e conforto com um toque de atitude. Ideal para looks urbanos e descontraídos.</p>
         <p class="text-yellow-500 font-bold mb-4">R$ 219,90</p>
-        <button onclick="mostrarMensagem('Calça Oversize Street', 'R$ 219,90')" class="w-full py-2 bg-yellow-500 text-black font-bold hover:bg-yellow-400 transition rounded-lg">Ver mais</button>
+        <button onclick="adicionarCarrinho('Calça Oversize Street', 'R$ 219,90')" class="w-full py-2 bg-yellow-500 text-black font-bold hover:bg-yellow-400 transition rounded-lg">Adicionar ao Carrinho</button>
       </div>
-    </div>
-
-    <div id="mensagem-compra" class="hidden mt-10 text-center">
-      <p class="text-yellow-300 text-lg font-semibold mb-4">Você escolheu o produto! Deseja continuar comprando ou finalizar?</p>
-      <a href="#produtos" class="text-yellow-500 font-bold text-xl hover:text-yellow-300 underline mb-4 block">Continuar Comprando</a>
-      <a href="https://wa.me/5599999999999" target="_blank" class="text-yellow-500 font-bold text-xl hover:text-yellow-300 underline">Finalizar Compra no WhatsApp</a>
     </div>
   </section>
 
@@ -131,16 +183,37 @@
   </footer>
 
   <script>
-    function toggleContatos() {
-      const painel = document.getElementById('redes-sociais');
-      painel.classList.toggle('hidden');
+    let carrinho = [];
+
+    // Função para mostrar o carrinho
+    function mostrarCarrinho() {
+      const carrinhoLista = document.getElementById('carrinho-lista');
+      carrinhoLista.style.display = (carrinhoLista.style.display === 'none' || carrinhoLista.style.display === '') ? 'block' : 'none';
+      mostrarItensCarrinho();
     }
 
-    function mostrarMensagem(produto, preco) {
-      const mensagem = document.getElementById('mensagem-compra');
-      mensagem.classList.remove('hidden');
-      mensagem.scrollIntoView({ behavior: 'smooth' });
-      mensagem.querySelector('p').textContent = `Você escolheu o produto ${produto} por ${preco}. Deseja continuar comprando ou finalizar?`;
+    // Adicionar produto ao carrinho
+    function adicionarCarrinho(nomeProduto, precoProduto) {
+      carrinho.push({ nome: nomeProduto, preco: precoProduto });
+      document.getElementById('carrinho').textContent = `Carrinho (${carrinho.length})`;
+    }
+
+    // Mostrar os itens do carrinho
+    function mostrarItensCarrinho() {
+      const carrinhoItens = document.getElementById('carrinho-itens');
+      carrinhoItens.innerHTML = ''; // Limpar a lista
+      carrinho.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.nome} - ${item.preco}`;
+        carrinhoItens.appendChild(li);
+      });
+    }
+
+    // Finalizar compra e redirecionar para WhatsApp
+    function finalizarCompra() {
+      const produtos = carrinho.map(item => `${item.nome} por ${item.preco}`).join(', ');
+      const mensagem = encodeURIComponent(`Gostaria de comprar os seguintes produtos: ${produtos}.`);
+      window.open(`https://wa.me/5599999999999?text=${mensagem}`, '_blank');
     }
   </script>
 </body>
