@@ -4,30 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StyleX - Streetwear</title>
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Orbitron&family=Russo+One&display=swap" rel="stylesheet" />
-
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Orbitron', sans-serif;
-    }
-    h1, h2, h3 {
-      font-family: 'Anton', sans-serif;
-    }
-    nav a, nav button {
-      font-family: 'Russo One', sans-serif;
-    }
-    p, li {
-      font-family: 'Orbitron', sans-serif;
-    }
-    button, a.inline-block, a:hover {
-      font-family: 'Bangers', cursive;
-    }
-
+    body { margin: 0; padding: 0; font-family: 'Orbitron', sans-serif; }
+    h1, h2, h3 { font-family: 'Anton', sans-serif; }
+    nav a, nav button { font-family: 'Russo One', sans-serif; }
+    p, li { font-family: 'Orbitron', sans-serif; }
+    button, a.inline-block, a:hover { font-family: 'Bangers', cursive; }
     .background {
       background: url('https://cdn.pixabay.com/photo/2015/07/15/04/13/graffiti-845647_1280.jpg') no-repeat center center fixed;
       background-size: cover;
@@ -43,7 +27,6 @@
       height: 100%;
       z-index: -5;
     }
-
     #carrinho {
       position: fixed;
       top: 20px;
@@ -56,7 +39,6 @@
       font-weight: bold;
       z-index: 100;
     }
-
     #carrinho-lista {
       position: fixed;
       top: 100px;
@@ -69,23 +51,9 @@
       max-width: 300px;
       width: 100%;
     }
-
-    #carrinho-lista h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-
-    #carrinho-lista ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    #carrinho-lista ul li {
-      margin-bottom: 10px;
-      font-size: 1rem;
-    }
-
+    #carrinho-lista h3 { font-size: 1.5rem; margin-bottom: 10px; }
+    #carrinho-lista ul { list-style: none; padding: 0; margin: 0; }
+    #carrinho-lista ul li { margin-bottom: 10px; font-size: 1rem; }
     #carrinho-lista button {
       background-color: #ffcc00;
       border: none;
@@ -102,9 +70,7 @@
   <div class="background"></div>
   <div class="overlay"></div>
 
-  <div id="carrinho" onclick="mostrarCarrinho()">
-    Carrinho (0)
-  </div>
+  <div id="carrinho" onclick="mostrarCarrinho()">Carrinho (0)</div>
   <div id="carrinho-lista">
     <h3>Carrinho de Compras</h3>
     <ul id="carrinho-itens"></ul>
@@ -122,34 +88,60 @@
   </header>
 
   <section id="home" class="text-center py-28 px-6">
-    <h2 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
-      Estilo que se impõe
-    </h2>
-    <p class="text-yellow-300 max-w-xl mx-auto mb-10 text-lg">
-      A StyleX traz o melhor da moda streetwear com atitude, autenticidade e originalidade.
-    </p>
+    <h2 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">Estilo que se impõe</h2>
+    <p class="text-yellow-300 max-w-xl mx-auto mb-10 text-lg">A StyleX traz o melhor da moda streetwear com atitude, autenticidade e originalidade.</p>
     <a href="#produtos" class="inline-block text-lg px-8 py-4 bg-yellow-500 text-black hover:bg-yellow-400 transition shadow-lg rounded-full">Ver Produtos</a>
   </section>
 
   <section id="produtos" class="px-6 py-20 bg-zinc-900/80">
     <h2 class="text-4xl font-extrabold text-yellow-400 mb-12 text-center">Produtos</h2>
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <!-- PRODUTOS SERÃO INJETADOS AQUI -->
-    </div>
+    <div id="produtos-container" class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"></div>
   </section>
 
   <footer class="bg-zinc-950 border-t border-yellow-500 text-center py-6">
     <p class="mb-4 text-yellow-300">Siga a StyleX nas redes sociais</p>
     <div class="flex justify-center gap-6 text-yellow-400 text-2xl">
-      <a href="https://www.instagram.com/stylex140/" target="_blank" title="Instagram">📸</a>
-      <a href="https://www.facebook.com/profile.php?id=61573863672549" target="_blank" title="Facebook">📘</a>
-      <a href="https://www.tiktok.com/@style.x.estilo.e.atitude" target="_blank" title="TikTok">🎵</a>
-      <a href="https://wa.me/5519987071339" target="_blank" title="WhatsApp">📱</a>
+      <a href="https://www.instagram.com/stylex140/" target="_blank" rel="noopener" title="Instagram">📸</a>
+      <a href="https://www.facebook.com/profile.php?id=61573863672549" target="_blank" rel="noopener" title="Facebook">📘</a>
+      <a href="https://www.tiktok.com/@style.x.estilo.e.atitude" target="_blank" rel="noopener" title="TikTok">🎵</a>
+      <a href="https://wa.me/5519987071339" target="_blank" rel="noopener" title="WhatsApp">📱</a>
     </div>
   </footer>
 
   <script>
     const carrinho = [];
+
+    const produtos = [
+      {
+        nome: 'Tênis StreetVision',
+        preco: 'R$ 329,90',
+        imagem: 'https://imgcentauro-a.akamaihd.net/1366x1366/M0F-4412-026-01.jpg',
+        descricao: 'Tênis com visual moderno e confortável para o dia a dia urbano.'
+      },
+      {
+        nome: 'Camiseta Oversize Grafite',
+        preco: 'R$ 89,90',
+        imagem: 'https://images.tcdn.com.br/img/img_prod/1152049/camiseta_oversized_masculina_3267_1_c3e6c445b84f7b6cc354e1c4f8f1f34a.jpg',
+        descricao: 'Camiseta ampla com estilo urbano e estampa exclusiva.'
+      },
+      // ...adicione mais 13 produtos aqui conforme o mesmo formato
+    ];
+
+    function carregarProdutos() {
+      const container = document.getElementById('produtos-container');
+      produtos.forEach(p => {
+        const div = document.createElement('div');
+        div.className = 'bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600';
+        div.innerHTML = `
+          <img src="${p.imagem}" alt="${p.nome}" class="w-full h-48 object-cover rounded-lg mb-4" />
+          <h3 class="text-2xl font-bold text-yellow-400 mb-2">${p.nome}</h3>
+          <p class="text-yellow-300 text-sm mb-4">${p.descricao}</p>
+          <p class="text-yellow-500 font-bold mb-4">${p.preco}</p>
+          <button onclick="adicionarCarrinho('${p.nome}', '${p.preco}')" class="w-full py-2 bg-yellow-500 text-black font-bold hover:bg-yellow-400 transition rounded-lg">Adicionar ao Carrinho</button>
+        `;
+        container.appendChild(div);
+      });
+    }
 
     function mostrarCarrinho() {
       const lista = document.getElementById('carrinho-lista');
@@ -157,8 +149,8 @@
       mostrarItensCarrinho();
     }
 
-    function adicionarCarrinho(nome, preco) {
-      carrinho.push({ nome, preco });
+    function adicionarCarrinho(nomeProduto, precoProduto) {
+      carrinho.push({ nome: nomeProduto, preco: precoProduto });
       document.getElementById('carrinho').textContent = `Carrinho (${carrinho.length})`;
     }
 
@@ -173,10 +165,12 @@
     }
 
     function finalizarCompra() {
-      const produtos = carrinho.map(item => `${item.nome} por ${item.preco}`).join(', ');
-      const mensagem = encodeURIComponent(`Gostaria de comprar os seguintes produtos: ${produtos}`);
+      const produtosTexto = carrinho.map(item => `${item.nome} por ${item.preco}`).join(', ');
+      const mensagem = encodeURIComponent(`Gostaria de comprar os seguintes produtos: ${produtosTexto}.`);
       window.open(`https://wa.me/5519987071339?text=${mensagem}`, '_blank');
     }
+
+    window.onload = carregarProdutos;
   </script>
 </body>
 </html>
