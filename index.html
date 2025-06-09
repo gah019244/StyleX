@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StyleX - Streetwear</title>
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Orbitron&family=Russo+One&display=swap" rel="stylesheet" />
-  
+
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
@@ -44,7 +44,6 @@
       z-index: -5;
     }
 
-    /* Carrinho de compras */
     #carrinho {
       position: fixed;
       top: 20px;
@@ -103,20 +102,15 @@
   <div class="background"></div>
   <div class="overlay"></div>
 
-  <!-- Carrinho de Compras -->
   <div id="carrinho" onclick="mostrarCarrinho()">
     Carrinho (0)
   </div>
-
   <div id="carrinho-lista">
     <h3>Carrinho de Compras</h3>
-    <ul id="carrinho-itens">
-      <!-- Itens do Carrinho serão listados aqui -->
-    </ul>
+    <ul id="carrinho-itens"></ul>
     <button onclick="finalizarCompra()">Finalizar Compra</button>
   </div>
 
-  <!-- Header -->
   <header class="flex items-center justify-between px-6 py-4 border-b border-yellow-500 bg-zinc-950/90 sticky top-0 z-50">
     <h1 class="text-3xl font-black tracking-wider text-yellow-500">StyleX</h1>
     <nav class="hidden md:flex gap-8 text-sm">
@@ -127,7 +121,6 @@
     </nav>
   </header>
 
-  <!-- Home -->
   <section id="home" class="text-center py-28 px-6">
     <h2 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
       Estilo que se impõe
@@ -138,82 +131,51 @@
     <a href="#produtos" class="inline-block text-lg px-8 py-4 bg-yellow-500 text-black hover:bg-yellow-400 transition shadow-lg rounded-full">Ver Produtos</a>
   </section>
 
-  <!-- Produtos -->
   <section id="produtos" class="px-6 py-20 bg-zinc-900/80">
     <h2 class="text-4xl font-extrabold text-yellow-400 mb-12 text-center">Produtos</h2>
     <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <!-- Produto 1 -->
-      <div class="bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600">
-        <img src="https://imgcentauro-a.akamaihd.net/1366x1366/M0F-4412-026-01.jpg" alt="Tênis Urbano X" class="w-full h-48 object-cover rounded-lg mb-4" />
-        <h3 class="text-2xl font-bold text-yellow-400 mb-2">Tênis Urbano X</h3>
-        <p class="text-yellow-300 text-sm mb-4">Modelo exclusivo de tênis ideal para o estilo streetwear, com design único e conforto para o dia a dia.</p>
-        <p class="text-yellow-500 font-bold mb-4">R$ 349,90</p>
-        <button onclick="adicionarCarrinho('Tênis Urbano X', 'R$ 349,90')" class="w-full py-2 bg-yellow-500 text-black font-bold hover:bg-yellow-400 transition rounded-lg">Adicionar ao Carrinho</button>
-      </div>
-
-      <!-- Produto 2 -->
-      <div class="bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600">
-        <img src="https://imgcentauro-a.akamaihd.net/1366x1366/975177J01.jpg" alt="Calça Cargo Black" class="w-full h-48 object-cover rounded-lg mb-4" />
-        <h3 class="text-2xl font-bold text-yellow-400 mb-2">Calça Cargo Black</h3>
-        <p class="text-yellow-300 text-sm mb-4">Calça com estilo streetwear, ajustável e com bolsos práticos para um visual moderno e confortável.</p>
-        <p class="text-yellow-500 font-bold mb-4">R$ 179,90</p>
-        <button onclick="adicionarCarrinho('Calça Cargo Black', 'R$ 179,90')" class="w-full py-2 bg-yellow-500 text-black font-bold hover:bg-yellow-400 transition rounded-lg">Adicionar ao Carrinho</button>
-      </div>
-
-      <!-- Produto 3 -->
-      <div class="bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600">
-        <img src="https://images.tcdn.com.br/img/img_prod/1152049/calca_cargo_masculina_estilo_streetwear_3523_1_b63c57b96b185a3e75aeb2fc3b62d659.jpg" alt="Calça Oversize Street" class="w-full h-48 object-cover rounded-lg mb-4" />
-        <h3 class="text-2xl font-bold text-yellow-400 mb-2">Calça Oversize Street</h3>
-        <p class="text-yellow-300 text-sm mb-4">A calça perfeita para quem busca estilo e conforto com um toque de atitude. Ideal para looks urbanos e descontraídos.</p>
-        <p class="text-yellow-500 font-bold mb-4">R$ 219,90</p>
-        <button onclick="adicionarCarrinho('Calça Oversize Street', 'R$ 219,90')" class="w-full py-2 bg-yellow-500 text-black font-bold hover:bg-yellow-400 transition rounded-lg">Adicionar ao Carrinho</button>
-      </div>
+      <!-- PRODUTOS SERÃO INJETADOS AQUI -->
     </div>
   </section>
 
-  <!-- Rodapé -->
   <footer class="bg-zinc-950 border-t border-yellow-500 text-center py-6">
     <p class="mb-4 text-yellow-300">Siga a StyleX nas redes sociais</p>
     <div class="flex justify-center gap-6 text-yellow-400 text-2xl">
-      <a href="https://www.instagram.com/stylex140/" target="_blank" rel="noopener" title="Instagram">📸</a>
-      <a href="https://www.facebook.com/profile.php?id=61573863672549" target="_blank" rel="noopener" title="Facebook">📘</a>
-      <a href="https://www.tiktok.com/@style.x.estilo.e.atitude" target="_blank" rel="noopener" title="TikTok">🎵</a>
-      <a href="https://wa.me/5599999999999" target="_blank" rel="noopener" title="WhatsApp">📱</a>
+      <a href="https://www.instagram.com/stylex140/" target="_blank" title="Instagram">📸</a>
+      <a href="https://www.facebook.com/profile.php?id=61573863672549" target="_blank" title="Facebook">📘</a>
+      <a href="https://www.tiktok.com/@style.x.estilo.e.atitude" target="_blank" title="TikTok">🎵</a>
+      <a href="https://wa.me/5519987071339" target="_blank" title="WhatsApp">📱</a>
     </div>
   </footer>
 
   <script>
-    let carrinho = [];
+    const carrinho = [];
 
-    // Função para mostrar o carrinho
     function mostrarCarrinho() {
-      const carrinhoLista = document.getElementById('carrinho-lista');
-      carrinhoLista.style.display = (carrinhoLista.style.display === 'none' || carrinhoLista.style.display === '') ? 'block' : 'none';
+      const lista = document.getElementById('carrinho-lista');
+      lista.style.display = (lista.style.display === 'none' || lista.style.display === '') ? 'block' : 'none';
       mostrarItensCarrinho();
     }
 
-    // Adicionar produto ao carrinho
-    function adicionarCarrinho(nomeProduto, precoProduto) {
-      carrinho.push({ nome: nomeProduto, preco: precoProduto });
+    function adicionarCarrinho(nome, preco) {
+      carrinho.push({ nome, preco });
       document.getElementById('carrinho').textContent = `Carrinho (${carrinho.length})`;
     }
 
-    // Mostrar os itens do carrinho
     function mostrarItensCarrinho() {
-      const carrinhoItens = document.getElementById('carrinho-itens');
-      carrinhoItens.innerHTML = ''; // Limpar a lista
+      const ul = document.getElementById('carrinho-itens');
+      ul.innerHTML = '';
       carrinho.forEach(item => {
         const li = document.createElement('li');
         li.textContent = `${item.nome} - ${item.preco}`;
-        carrinhoItens.appendChild(li);
+        ul.appendChild(li);
       });
     }
 
-    // Finalizar compra e redirecionar para WhatsApp
     function finalizarCompra() {
       const produtos = carrinho.map(item => `${item.nome} por ${item.preco}`).join(', ');
-      const mensagem = encodeURIComponent(`Gostaria de comprar os seguintes produtos: ${produtos}.`);
-      window.open(`https://wa.me/5599999999999?text=${mensagem}`, '_blank');
+      const mensagem = encodeURIComponent(`Gostaria de comprar os seguintes produtos: ${produtos}`);
+      window.open(`https://wa.me/5519987071339?text=${mensagem}`, '_blank');
     }
   </script>
 </body>
