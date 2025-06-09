@@ -101,25 +101,6 @@
     </div>
   </section>
 
-  <!-- Destaques -->
-  <section id="destaques" class="grid md:grid-cols-3 gap-8 px-6 py-20">
-    <div class="bg-zinc-900 border border-yellow-600 shadow-md p-6 text-center rounded-xl">
-      <img src="https://acdn-us.mitiendanube.com/stores/002/458/599/products/1731-a375c0b865f7dff72e16839888968653-1024-1024.png" alt="Lançamentos" class="h-48 w-full object-cover rounded-xl mb-4 shadow-inner" />
-      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">Lançamentos</h3>
-      <p class="text-yellow-300 text-sm">Confira as últimas novidades em streetwear.</p>
-    </div>
-    <div class="bg-zinc-900 border border-yellow-600 shadow-md p-6 text-center rounded-xl">
-      <img src="https://cdn.awsli.com.br/600x1000/1714/1714539/produto/289387229/945b10f78b8850fa776d90ff1c0d6be9-up3xgpmon6.jpeg" alt="Mais Vendidos" class="h-48 w-full object-cover rounded-xl mb-4 shadow-inner" />
-      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">Mais vendidos</h3>
-      <p class="text-yellow-300 text-sm">Produtos que estão fazendo sucesso.</p>
-    </div>
-    <div class="bg-zinc-900 border border-yellow-600 shadow-md p-6 text-center rounded-xl">
-      <img src="https://thumbor.cartpanda.com/D9ZofxCH2gg1pdCGeyVYDW5cHOI=/795x0/https://assets.mycartpanda.com/static/products_images/3a/53/f0/1715645511.jpg?v=13252247658" alt="Ofertas" class="h-48 w-full object-cover rounded-xl mb-4 shadow-inner" />
-      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">Ofertas</h3>
-      <p class="text-yellow-300 text-sm">Peças com desconto por tempo limitado.</p>
-    </div>
-  </section>
-
   <!-- Produtos -->
   <section id="produtos" class="px-6 py-20 bg-zinc-900/80">
     <h2 class="text-4xl font-extrabold text-yellow-400 mb-12 text-center">Produtos</h2>
@@ -129,8 +110,18 @@
         <h3 class="text-2xl font-bold text-yellow-400 mb-4">Tênis</h3>
         <p class="text-yellow-300 text-sm mb-4">Confira nossos modelos exclusivos de tênis streetwear.</p>
         <ul class="space-y-2">
-          <li><button onclick="mostrarMensagem()" class="hover:text-yellow-200 underline">Tênis Street Classic</button></li>
-          <li><button onclick="mostrarMensagem()" class="hover:text-yellow-200 underline">Tênis Urbano X</button></li>
+          <li>
+            <button onclick="mostrarMensagem('Tênis Street Classic', 'R$ 299,90')" class="hover:text-yellow-200 underline">
+              Tênis Street Classic
+            </button>
+            <p class="text-yellow-500 font-bold">R$ 299,90</p>
+          </li>
+          <li>
+            <button onclick="mostrarMensagem('Tênis Urbano X', 'R$ 349,90')" class="hover:text-yellow-200 underline">
+              Tênis Urbano X
+            </button>
+            <p class="text-yellow-500 font-bold">R$ 349,90</p>
+          </li>
         </ul>
       </div>
       <!-- Calças -->
@@ -138,17 +129,28 @@
         <h3 class="text-2xl font-bold text-yellow-400 mb-4">Calças</h3>
         <p class="text-yellow-300 text-sm mb-4">Estilo urbano com conforto e autenticidade nas nossas calças.</p>
         <ul class="space-y-2">
-          <li><button onclick="mostrarMensagem()" class="hover:text-yellow-200 underline">Calça Cargo Black</button></li>
-          <li><button onclick="mostrarMensagem()" class="hover:text-yellow-200 underline">Calça Oversize Street</button></li>
+          <li>
+            <button onclick="mostrarMensagem('Calça Cargo Black', 'R$ 179,90')" class="hover:text-yellow-200 underline">
+              Calça Cargo Black
+            </button>
+            <p class="text-yellow-500 font-bold">R$ 179,90</p>
+          </li>
+          <li>
+            <button onclick="mostrarMensagem('Calça Oversize Street', 'R$ 219,90')" class="hover:text-yellow-200 underline">
+              Calça Oversize Street
+            </button>
+            <p class="text-yellow-500 font-bold">R$ 219,90</p>
+          </li>
         </ul>
       </div>
     </div>
     <div id="mensagem-compra" class="hidden mt-10 text-center">
       <p class="text-yellow-300 text-lg font-semibold mb-4">
-        Finalize sua compra conosco no nosso WhatsApp:
+        Você escolheu um produto! Deseja continuar comprando ou finalizar?
       </p>
+      <a href="#produtos" class="text-yellow-500 font-bold text-xl hover:text-yellow-300 underline mb-4 block">Continuar Comprando</a>
       <a href="https://wa.me/5599999999999" target="_blank" class="text-yellow-500 font-bold text-xl hover:text-yellow-300 underline">
-        📱 WhatsApp StyleX
+        Finalizar Compra no WhatsApp
       </a>
     </div>
   </section>
@@ -174,10 +176,12 @@
       }
     }
 
-    function mostrarMensagem() {
+    function mostrarMensagem(produto, preco) {
       const mensagem = document.getElementById('mensagem-compra');
       mensagem.classList.remove('hidden');
       mensagem.scrollIntoView({behavior: 'smooth'});
+      const texto = `Você escolheu o produto ${produto} por ${preco}.`;
+      mensagem.querySelector('p').textContent = texto;
     }
   </script>
 </body>
