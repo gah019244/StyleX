@@ -75,32 +75,40 @@
   <!-- Produtos com abas -->
   <section id="produtos" class="px-6 py-20 bg-zinc-900/80">
     <h2 class="text-4xl font-extrabold text-yellow-400 mb-12 text-center">Produtos</h2>
-    <div class="max-w-4xl mx-auto">
-      <div class="flex justify-center gap-4 mb-8">
-        <button onclick="mostrarAba('tenis')" class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-2 px-6 rounded-full transition">Tênis</button>
-        <button onclick="mostrarAba('calcas')" class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-2 px-6 rounded-full transition">Calças</button>
-      </div>
 
-      <!-- Aba Tênis -->
-      <div id="aba-tenis" class="hidden bg-zinc-800 p-6 rounded-xl border border-yellow-600">
-        <h3 class="text-2xl font-bold text-yellow-400 mb-4">Opções de Tênis</h3>
-        <ul class="list-disc list-inside text-yellow-300 space-y-2">
-          <li>Tênis High Top</li>
-          <li>Tênis Chunky</li>
-          <li>Tênis Esportivos</li>
-          <li>Tênis Casuais</li>
-        </ul>
-      </div>
+    <!-- Botões de categoria -->
+    <div class="flex justify-center gap-4 mb-8">
+      <button onclick="mostrarAba('tenis')" class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-2 px-6 rounded-full transition">Tênis</button>
+      <button onclick="mostrarAba('calcas')" class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-2 px-6 rounded-full transition">Calças</button>
+    </div>
 
-      <!-- Aba Calças -->
-      <div id="aba-calcas" class="hidden bg-zinc-800 p-6 rounded-xl border border-yellow-600">
-        <h3 class="text-2xl font-bold text-yellow-400 mb-4">Opções de Calças</h3>
-        <ul class="list-disc list-inside text-yellow-300 space-y-2">
-          <li>Calças Cargo</li>
-          <li>Jogger Street</li>
-          <li>Calças Jeans Wide</li>
-          <li>Calças Oversized</li>
-        </ul>
+    <!-- Conteúdo de Tênis -->
+    <div id="aba-tenis" class="hidden bg-zinc-800 p-6 rounded-xl border border-yellow-600 max-w-4xl mx-auto">
+      <h3 class="text-2xl font-bold text-yellow-400 mb-4">Opções de Tênis</h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-zinc-900 p-4 rounded-xl">
+          <img src="https://via.placeholder.com/300x200?text=High+Top" class="rounded mb-2">
+          <p class="text-yellow-300">Tênis High Top</p>
+        </div>
+        <div class="bg-zinc-900 p-4 rounded-xl">
+          <img src="https://via.placeholder.com/300x200?text=Chunky" class="rounded mb-2">
+          <p class="text-yellow-300">Tênis Chunky</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conteúdo de Calças -->
+    <div id="aba-calcas" class="hidden bg-zinc-800 p-6 rounded-xl border border-yellow-600 max-w-4xl mx-auto">
+      <h3 class="text-2xl font-bold text-yellow-400 mb-4">Opções de Calças</h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-zinc-900 p-4 rounded-xl">
+          <img src="https://via.placeholder.com/300x200?text=Cargo" class="rounded mb-2">
+          <p class="text-yellow-300">Calça Cargo</p>
+        </div>
+        <div class="bg-zinc-900 p-4 rounded-xl">
+          <img src="https://via.placeholder.com/300x200?text=Jogger" class="rounded mb-2">
+          <p class="text-yellow-300">Calça Jogger</p>
+        </div>
       </div>
     </div>
   </section>
@@ -116,7 +124,7 @@
     </div>
   </footer>
 
-  <!-- Script das abas -->
+  <!-- Script para alternar abas -->
   <script>
     function mostrarAba(aba) {
       document.getElementById('aba-tenis').style.display = aba === 'tenis' ? 'block' : 'none';
@@ -125,3 +133,4 @@
   </script>
 </body>
 </html>
+
