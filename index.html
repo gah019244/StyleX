@@ -38,8 +38,18 @@
       <a href="#home" class="hover:text-yellow-300 transition">Início</a>
       <a href="#sobre" class="hover:text-yellow-300 transition">Sobre</a>
       <a href="#produtos" class="hover:text-yellow-300 transition">Produtos</a>
-      <a href="#contato" class="hover:text-yellow-300 transition">Contato</a>
+      <button onclick="toggleContatos()" class="hover:text-yellow-300 transition">Contato</button>
     </nav>
+    <!-- Painel de Redes Sociais -->
+    <div id="redes-sociais" class="hidden absolute right-6 top-20 bg-zinc-900 border border-yellow-600 rounded-xl px-6 py-4 text-left z-50 shadow-xl">
+      <p class="text-yellow-400 font-bold mb-2">Nossas redes:</p>
+      <ul class="space-y-2 text-yellow-300 text-sm">
+        <li><a href="https://www.instagram.com/stylex140/" target="_blank" class="hover:text-yellow-100">📸 Instagram</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61573863672549" target="_blank" class="hover:text-yellow-100">📘 Facebook</a></li>
+        <li><a href="https://www.tiktok.com/@style.x.estilo.e.atitude" target="_blank" class="hover:text-yellow-100">🎵 TikTok</a></li>
+        <li><a href="https://wa.me/5599999999999" target="_blank" class="hover:text-yellow-100">📱 WhatsApp</a></li>
+      </ul>
+    </div>
   </header>
 
   <!-- Home -->
@@ -72,54 +82,36 @@
     </div>
   </section>
 
-  <!-- Produtos com abas -->
+  <!-- Produtos -->
   <section id="produtos" class="px-6 py-20 bg-zinc-900/80">
     <h2 class="text-4xl font-extrabold text-yellow-400 mb-12 text-center">Produtos</h2>
-
-    <!-- Botões de categoria -->
-    <div class="flex justify-center gap-4 mb-8">
-      <button onclick="mostrarAba('tenis')" class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-2 px-6 rounded-full transition">Tênis</button>
-      <button onclick="mostrarAba('calcas')" class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-2 px-6 rounded-full transition">Calças</button>
-    </div>
-
-    <!-- Conteúdo de Tênis -->
-    <div id="aba-tenis" class="hidden bg-zinc-800 p-6 rounded-xl border border-yellow-600 max-w-4xl mx-auto">
-      <h3 class="text-2xl font-bold text-yellow-400 mb-4">Opções de Tênis</h3>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-zinc-900 p-4 rounded-xl cursor-pointer hover:bg-zinc-700" onclick="mostrarMensagem()">
-          <img src="https://via.placeholder.com/300x200?text=High+Top" class="rounded mb-2">
-          <p class="text-yellow-300">Tênis High Top</p>
-        </div>
-        <div class="bg-zinc-900 p-4 rounded-xl cursor-pointer hover:bg-zinc-700" onclick="mostrarMensagem()">
-          <img src="https://via.placeholder.com/300x200?text=Chunky" class="rounded mb-2">
-          <p class="text-yellow-300">Tênis Chunky</p>
-        </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <!-- Tênis -->
+      <div class="bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600">
+        <h3 class="text-2xl font-bold text-yellow-400 mb-4">Tênis</h3>
+        <p class="text-yellow-300 text-sm mb-4">Confira nossos modelos exclusivos de tênis streetwear.</p>
+        <ul class="space-y-2">
+          <li><button onclick="mostrarMensagem()" class="hover:text-yellow-200 underline">Tênis Street Classic</button></li>
+          <li><button onclick="mostrarMensagem()" class="hover:text-yellow-200 underline">Tênis Urbano X</button></li>
+        </ul>
+      </div>
+      <!-- Calças -->
+      <div class="bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600">
+        <h3 class="text-2xl font-bold text-yellow-400 mb-4">Calças</h3>
+        <p class="text-yellow-300 text-sm mb-4">Estilo urbano com conforto e autenticidade nas nossas calças.</p>
+        <ul class="space-y-2">
+          <li><button onclick="mostrarMensagem()" class="hover:text-yellow-200 underline">Calça Cargo Black</button></li>
+          <li><button onclick="mostrarMensagem()" class="hover:text-yellow-200 underline">Calça Oversize Street</button></li>
+        </ul>
       </div>
     </div>
-
-    <!-- Conteúdo de Calças -->
-    <div id="aba-calcas" class="hidden bg-zinc-800 p-6 rounded-xl border border-yellow-600 max-w-4xl mx-auto">
-      <h3 class="text-2xl font-bold text-yellow-400 mb-4">Opções de Calças</h3>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-zinc-900 p-4 rounded-xl cursor-pointer hover:bg-zinc-700" onclick="mostrarMensagem()">
-          <img src="https://via.placeholder.com/300x200?text=Cargo" class="rounded mb-2">
-          <p class="text-yellow-300">Calça Cargo</p>
-        </div>
-        <div class="bg-zinc-900 p-4 rounded-xl cursor-pointer hover:bg-zinc-700" onclick="mostrarMensagem()">
-          <img src="https://via.placeholder.com/300x200?text=Jogger" class="rounded mb-2">
-          <p class="text-yellow-300">Calça Jogger</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Mensagem de WhatsApp -->
-    <div id="mensagem-compra" class="hidden text-center mt-12">
-      <p class="text-xl font-semibold text-yellow-300 mb-4">Finalize sua compra conosco no nosso WhatsApp</p>
-      <a href="https://wa.me/5599999999999" target="_blank" class="inline-block px-6 py-3 bg-green-500 hover:bg-green-400 text-black font-bold rounded-full transition">Ir para o WhatsApp</a>
+    <div id="mensagem-compra" class="hidden mt-10 text-center">
+      <p class="text-yellow-300 text-lg font-semibold mb-4">Finalize sua compra conosco no nosso WhatsApp!</p>
+      <a href="https://wa.me/5599999999999" target="_blank" class="inline-block px-6 py-3 bg-yellow-500 text-black rounded-full hover:bg-yellow-400 transition">Ir para o WhatsApp</a>
     </div>
   </section>
 
-  <!-- Rodapé com redes sociais -->
+  <!-- Rodapé -->
   <footer class="bg-zinc-950 border-t border-yellow-500 text-center py-6">
     <p class="mb-4 text-yellow-300">Siga a StyleX nas redes sociais</p>
     <div class="flex justify-center gap-6 text-yellow-400 text-2xl">
@@ -130,28 +122,16 @@
     </div>
   </footer>
 
-  <!-- Script funcional com Tailwind -->
+  <!-- Scripts -->
   <script>
-    function mostrarAba(aba) {
-      const abaTenis = document.getElementById('aba-tenis');
-      const abaCalcas = document.getElementById('aba-calcas');
-      const mensagem = document.getElementById('mensagem-compra');
-
-      abaTenis.classList.add('hidden');
-      abaCalcas.classList.add('hidden');
-      mensagem.classList.add('hidden');
-
-      if (aba === 'tenis') {
-        abaTenis.classList.remove('hidden');
-      } else if (aba === 'calcas') {
-        abaCalcas.classList.remove('hidden');
-      }
+    function mostrarMensagem() {
+      document.getElementById('mensagem-compra').classList.remove('hidden');
+      document.getElementById('mensagem-compra').scrollIntoView({ behavior: 'smooth' });
     }
 
-    function mostrarMensagem() {
-      const mensagem = document.getElementById('mensagem-compra');
-      mensagem.classList.remove('hidden');
-      mensagem.scrollIntoView({ behavior: 'smooth' });
+    function toggleContatos() {
+      const painel = document.getElementById('redes-sociais');
+      painel.classList.toggle('hidden');
     }
   </script>
 </body>
