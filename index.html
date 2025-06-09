@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StyleX - Streetwear</title>
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Orbitron&family=Russo+One&display=swap" rel="stylesheet" />
   
@@ -51,17 +51,13 @@
 
   <!-- Header -->
   <header class="flex items-center justify-between px-6 py-4 border-b border-yellow-500 bg-zinc-950/90 sticky top-0 z-50">
-    <div class="flex items-center gap-4">
-      <img src="https://i.imgur.com/5XQ9KXG.png" alt="Logo StyleX" class="h-12 w-auto" />
-      <h1 class="text-3xl font-black tracking-wider text-yellow-500">StyleX</h1>
-    </div>
+    <h1 class="text-3xl font-black tracking-wider text-yellow-500">StyleX</h1>
     <nav class="hidden md:flex gap-8 text-sm">
       <a href="#home" class="hover:text-yellow-300 transition">Início</a>
       <a href="#sobre" class="hover:text-yellow-300 transition">Sobre</a>
       <a href="#produtos" class="hover:text-yellow-300 transition">Produtos</a>
       <button onclick="toggleContatos()" class="hover:text-yellow-300 transition">Contato</button>
     </nav>
-    <!-- Painel de Redes Sociais -->
     <div id="redes-sociais" class="hidden absolute right-6 top-20 bg-zinc-900 border border-yellow-600 rounded-xl px-6 py-4 text-left z-50 shadow-xl">
       <p class="text-yellow-400 font-bold mb-2">Nossas redes:</p>
       <ul class="space-y-2 text-yellow-300 text-sm">
@@ -102,11 +98,11 @@
 
   <!-- Destaques -->
   <section id="destaques" class="grid md:grid-cols-3 gap-8 px-6 py-20">
+    <!-- Novo primeiro destaque com imagem personalizada e sem texto -->
     <div class="bg-zinc-900 border border-yellow-600 shadow-md p-6 text-center rounded-xl">
-      <img src="https://acdn-us.mitiendanube.com/stores/002/458/599/products/1731-a375c0b865f7dff72e16839888968653-1024-1024.png" alt="Lançamentos" class="h-48 w-full object-cover rounded-xl mb-4 shadow-inner" />
-      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">Lançamentos</h3>
-      <p class="text-yellow-300 text-sm">Confira as últimas novidades em streetwear.</p>
+      <img src="https://i.postimg.cc/yDc33Zx0/IMG-20240607-113518-570.jpg" alt="Lançamento StyleX" class="h-64 w-full object-cover rounded-xl shadow-inner" />
     </div>
+
     <div class="bg-zinc-900 border border-yellow-600 shadow-md p-6 text-center rounded-xl">
       <img src="https://cdn.awsli.com.br/600x1000/1714/1714539/produto/289387229/945b10f78b8850fa776d90ff1c0d6be9-up3xgpmon6.jpeg" alt="Mais Vendidos" class="h-48 w-full object-cover rounded-xl mb-4 shadow-inner" />
       <h3 class="text-2xl font-semibold mb-2 text-yellow-400">Mais vendidos</h3>
@@ -172,7 +168,7 @@
     function mostrarMensagem() {
       const mensagem = document.getElementById('mensagem-compra');
       mensagem.classList.remove('hidden');
-      mensagem.scrollIntoView({behavior: 'smooth'});
+      mensagem.scrollIntoView({ behavior: 'smooth' });
     }
   </script>
 </body>
