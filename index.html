@@ -1,3 +1,5 @@
+<!-- Aqui está o código HTML completo com 15 produtos adicionados -->
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -15,68 +17,42 @@
     .background {
       background: url('https://cdn.pixabay.com/photo/2015/07/15/04/13/graffiti-845647_1280.jpg') no-repeat center center fixed;
       background-size: cover;
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      z-index: -10;
+      position: fixed; width: 100%; height: 100%; z-index: -10;
     }
     .overlay {
       background-color: rgba(0, 0, 0, 0.85);
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      z-index: -5;
+      position: fixed; width: 100%; height: 100%; z-index: -5;
     }
     #carrinho {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background-color: #ffcc00;
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: bold;
+      position: fixed; top: 20px; right: 20px;
+      background-color: #ffcc00; color: #000; padding: 10px 20px;
+      border-radius: 10px; cursor: pointer; font-weight: bold;
       z-index: 100;
     }
     #carrinho-lista {
-      position: fixed;
-      top: 100px;
-      right: 20px;
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      display: none;
-      max-width: 300px;
-      width: 100%;
+      position: fixed; top: 100px; right: 20px;
+      background-color: #333; color: #fff; padding: 20px;
+      border-radius: 10px; display: none; max-width: 300px;
     }
     #carrinho-lista h3 { font-size: 1.5rem; margin-bottom: 10px; }
     #carrinho-lista ul { list-style: none; padding: 0; margin: 0; }
     #carrinho-lista ul li { margin-bottom: 10px; font-size: 1rem; }
     #carrinho-lista button {
-      background-color: #ffcc00;
-      border: none;
-      color: #000;
-      font-weight: bold;
-      padding: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 20px;
+      background-color: #ffcc00; border: none; color: #000;
+      font-weight: bold; padding: 10px; border-radius: 5px;
+      cursor: pointer; margin-top: 20px;
     }
   </style>
 </head>
 <body class="text-yellow-400 font-sans">
   <div class="background"></div>
   <div class="overlay"></div>
-
   <div id="carrinho" onclick="mostrarCarrinho()">Carrinho (0)</div>
   <div id="carrinho-lista">
     <h3>Carrinho de Compras</h3>
     <ul id="carrinho-itens"></ul>
     <button onclick="finalizarCompra()">Finalizar Compra</button>
   </div>
-
   <header class="flex items-center justify-between px-6 py-4 border-b border-yellow-500 bg-zinc-950/90 sticky top-0 z-50">
     <h1 class="text-3xl font-black tracking-wider text-yellow-500">StyleX</h1>
     <nav class="hidden md:flex gap-8 text-sm">
@@ -86,18 +62,17 @@
       <button onclick="toggleContatos()" class="hover:text-yellow-300 transition">Contato</button>
     </nav>
   </header>
-
   <section id="home" class="text-center py-28 px-6">
     <h2 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">Estilo que se impõe</h2>
-    <p class="text-yellow-300 max-w-xl mx-auto mb-10 text-lg">A StyleX traz o melhor da moda streetwear com atitude, autenticidade e originalidade.</p>
+    <p class="text-yellow-300 max-w-xl mx-auto mb-10 text-lg">
+      A StyleX traz o melhor da moda streetwear com atitude, autenticidade e originalidade.
+    </p>
     <a href="#produtos" class="inline-block text-lg px-8 py-4 bg-yellow-500 text-black hover:bg-yellow-400 transition shadow-lg rounded-full">Ver Produtos</a>
   </section>
-
   <section id="produtos" class="px-6 py-20 bg-zinc-900/80">
     <h2 class="text-4xl font-extrabold text-yellow-400 mb-12 text-center">Produtos</h2>
-    <div id="produtos-container" class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"></div>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto" id="lista-produtos"></div>
   </section>
-
   <footer class="bg-zinc-950 border-t border-yellow-500 text-center py-6">
     <p class="mb-4 text-yellow-300">Siga a StyleX nas redes sociais</p>
     <div class="flex justify-center gap-6 text-yellow-400 text-2xl">
@@ -108,69 +83,69 @@
     </div>
   </footer>
 
-  <script>
-    const carrinho = [];
+<script>
+const produtos = [
+  { nome: "Tênis Urbano X", preco: "R$ 349,90", imagem: "https://imgcentauro-a.akamaihd.net/1366x1366/M0F-4412-026-01.jpg", desc: "Modelo exclusivo de tênis ideal para o estilo streetwear." },
+  { nome: "Calça Cargo Black", preco: "R$ 179,90", imagem: "https://imgcentauro-a.akamaihd.net/1366x1366/975177J01.jpg", desc: "Calça com bolsos práticos e visual moderno." },
+  { nome: "Camiseta Oversized Grafite", preco: "R$ 99,90", imagem: "https://images.tcdn.com.br/img/img_prod/1152049/camiseta_streetwear_2955_1_bbb.jpg", desc: "Camiseta larga e estilosa com visual urbano." },
+  { nome: "Jaqueta Corta Vento StreetX", preco: "R$ 249,90", imagem: "https://imgcentauro-a.akamaihd.net/1366x1366/984036K01.jpg", desc: "Perfeita para o clima urbano, com muito estilo." },
+  { nome: "Boné Flat Brim StyleX", preco: "R$ 69,90", imagem: "https://static.netshoes.com.br/produtos/bone-new-era-950-ny-yankees-aba-reta/26/FB5-1755-026/FB5-1755-026_zoom1.jpg", desc: "Design urbano com aba reta e muita atitude." },
+  { nome: "Moletom Hoodie Neon", preco: "R$ 199,90", imagem: "https://cdnv2.moovin.com.br/fatal/imagens/produtos/det/moletom-canguru-com-capuz-fatal-cores-neon-162809917195847.png", desc: "Confortável, quente e cheio de estilo neon." },
+  { nome: "Shorts Street Cargo", preco: "R$ 149,90", imagem: "https://imgcentauro-a.akamaihd.net/1366x1366/M0A-0617-026-01.jpg", desc: "Shorts ideal para dias quentes com praticidade." },
+  { nome: "Tênis Chunky Branco", preco: "R$ 379,90", imagem: "https://imgcentauro-a.akamaihd.net/1366x1366/943990A01.jpg", desc: "Tênis robusto com design urbano clean." },
+  { nome: "Camiseta Básica StyleX", preco: "R$ 89,90", imagem: "https://images.tcdn.com.br/img/img_prod/1152049/camiseta_streetwear_3483_1_54b.jpg", desc: "Estampa discreta, perfeita para qualquer look." },
+  { nome: "Mochila Street Clássica", preco: "R$ 159,90", imagem: "https://imgcentauro-a.akamaihd.net/1366x1366/983645K01.jpg", desc: "Mochila prática com visual descolado." },
+  { nome: "Regata Estilo Livre", preco: "R$ 79,90", imagem: "https://images.tcdn.com.br/img/img_prod/1152049/regata_streetwear_2383_1_b55.jpg", desc: "Leve, solta e pronta para o verão urbano." },
+  { nome: "Calça Jogger Night", preco: "R$ 189,90", imagem: "https://imgcentauro-a.akamaihd.net/1366x1366/932137A01.jpg", desc: "Confortável com elástico e visual moderno." },
+  { nome: "Óculos Escuros Street", preco: "R$ 99,90", imagem: "https://images.tcdn.com.br/img/img_prod/1152049/oculos_escuro_streetwear_3414_1_c3e.jpg", desc: "Estilo e proteção com atitude." },
+  { nome: "Pochete StyleX", preco: "R$ 89,90", imagem: "https://imgcentauro-a.akamaihd.net/1366x1366/M1A-0415-026-01.jpg", desc: "Acessório ideal para carregar o essencial." },
+  { nome: "Bucket Hat Camuflado", preco: "R$ 59,90", imagem: "https://imgcentauro-a.akamaihd.net/1366x1366/983642K01.jpg", desc: "Estilo retrô e urbano para completar o visual." }
+];
 
-    const produtos = [
-      {
-        nome: 'Tênis StreetVision',
-        preco: 'R$ 329,90',
-        imagem: 'https://imgcentauro-a.akamaihd.net/1366x1366/M0F-4412-026-01.jpg',
-        descricao: 'Tênis com visual moderno e confortável para o dia a dia urbano.'
-      },
-      {
-        nome: 'Camiseta Oversize Grafite',
-        preco: 'R$ 89,90',
-        imagem: 'https://images.tcdn.com.br/img/img_prod/1152049/camiseta_oversized_masculina_3267_1_c3e6c445b84f7b6cc354e1c4f8f1f34a.jpg',
-        descricao: 'Camiseta ampla com estilo urbano e estampa exclusiva.'
-      },
-      // ...adicione mais 13 produtos aqui conforme o mesmo formato
-    ];
+let carrinho = [];
 
-    function carregarProdutos() {
-      const container = document.getElementById('produtos-container');
-      produtos.forEach(p => {
-        const div = document.createElement('div');
-        div.className = 'bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600';
-        div.innerHTML = `
-          <img src="${p.imagem}" alt="${p.nome}" class="w-full h-48 object-cover rounded-lg mb-4" />
-          <h3 class="text-2xl font-bold text-yellow-400 mb-2">${p.nome}</h3>
-          <p class="text-yellow-300 text-sm mb-4">${p.descricao}</p>
-          <p class="text-yellow-500 font-bold mb-4">${p.preco}</p>
-          <button onclick="adicionarCarrinho('${p.nome}', '${p.preco}')" class="w-full py-2 bg-yellow-500 text-black font-bold hover:bg-yellow-400 transition rounded-lg">Adicionar ao Carrinho</button>
-        `;
-        container.appendChild(div);
-      });
-    }
+function mostrarCarrinho() {
+  const carrinhoLista = document.getElementById('carrinho-lista');
+  carrinhoLista.style.display = (carrinhoLista.style.display === 'none' || carrinhoLista.style.display === '') ? 'block' : 'none';
+  mostrarItensCarrinho();
+}
 
-    function mostrarCarrinho() {
-      const lista = document.getElementById('carrinho-lista');
-      lista.style.display = (lista.style.display === 'none' || lista.style.display === '') ? 'block' : 'none';
-      mostrarItensCarrinho();
-    }
+function adicionarCarrinho(nomeProduto, precoProduto) {
+  carrinho.push({ nome: nomeProduto, preco: precoProduto });
+  document.getElementById('carrinho').textContent = `Carrinho (${carrinho.length})`;
+}
 
-    function adicionarCarrinho(nomeProduto, precoProduto) {
-      carrinho.push({ nome: nomeProduto, preco: precoProduto });
-      document.getElementById('carrinho').textContent = `Carrinho (${carrinho.length})`;
-    }
+function mostrarItensCarrinho() {
+  const carrinhoItens = document.getElementById('carrinho-itens');
+  carrinhoItens.innerHTML = '';
+  carrinho.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = `${item.nome} - ${item.preco}`;
+    carrinhoItens.appendChild(li);
+  });
+}
 
-    function mostrarItensCarrinho() {
-      const ul = document.getElementById('carrinho-itens');
-      ul.innerHTML = '';
-      carrinho.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = `${item.nome} - ${item.preco}`;
-        ul.appendChild(li);
-      });
-    }
+function finalizarCompra() {
+  const produtos = carrinho.map(item => `${item.nome} por ${item.preco}`).join(', ');
+  const mensagem = encodeURIComponent(`Gostaria de comprar os seguintes produtos: ${produtos}.`);
+  window.open(`https://wa.me/5519987071339?text=${mensagem}`, '_blank');
+}
 
-    function finalizarCompra() {
-      const produtosTexto = carrinho.map(item => `${item.nome} por ${item.preco}`).join(', ');
-      const mensagem = encodeURIComponent(`Gostaria de comprar os seguintes produtos: ${produtosTexto}.`);
-      window.open(`https://wa.me/5519987071339?text=${mensagem}`, '_blank');
-    }
+// Carregar produtos na tela
+const lista = document.getElementById("lista-produtos");
+produtos.forEach(prod => {
+  const div = document.createElement("div");
+  div.className = "bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600";
+  div.innerHTML = `
+    <img src="${prod.imagem}" alt="${prod.nome}" class="w-full h-48 object-cover rounded-lg mb-4" />
+    <h3 class="text-2xl font-bold text-yellow-400 mb-2">${prod.nome}</h3>
+    <p class="text-yellow-300 text-sm mb-4">${prod.desc}</p>
+    <p class="text-yellow-500 font-bold mb-4">${prod.preco}</p>
+    <button onclick="adicionarCarrinho('${prod.nome}', '${prod.preco}')" class="w-full py-2 bg-yellow-500 text-black font-bold hover:bg-yellow-400 transition rounded-lg">Adicionar ao Carrinho</button>
+  `;
+  lista.appendChild(div);
+});
+</script>
 
-    window.onload = carregarProdutos;
-  </script>
 </body>
 </html>
