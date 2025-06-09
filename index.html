@@ -72,19 +72,35 @@
     </div>
   </section>
 
-  <!-- Produtos -->
+  <!-- Produtos com abas -->
   <section id="produtos" class="px-6 py-20 bg-zinc-900/80">
     <h2 class="text-4xl font-extrabold text-yellow-400 mb-12 text-center">Produtos</h2>
-    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-      <!-- Tênis -->
-      <div class="bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600">
-        <h3 class="text-2xl font-bold text-yellow-400 mb-4">Tênis</h3>
-        <p class="text-yellow-300 text-sm">Confira nossos modelos exclusivos de tênis streetwear.</p>
+    <div class="max-w-4xl mx-auto">
+      <div class="flex justify-center gap-4 mb-8">
+        <button onclick="mostrarAba('tenis')" class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-2 px-6 rounded-full transition">Tênis</button>
+        <button onclick="mostrarAba('calcas')" class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-2 px-6 rounded-full transition">Calças</button>
       </div>
-      <!-- Calças -->
-      <div class="bg-zinc-800 rounded-xl p-6 shadow-lg border border-yellow-600">
-        <h3 class="text-2xl font-bold text-yellow-400 mb-4">Calças</h3>
-        <p class="text-yellow-300 text-sm">Estilo urbano com conforto e autenticidade nas nossas calças.</p>
+
+      <!-- Aba Tênis -->
+      <div id="aba-tenis" class="hidden bg-zinc-800 p-6 rounded-xl border border-yellow-600">
+        <h3 class="text-2xl font-bold text-yellow-400 mb-4">Opções de Tênis</h3>
+        <ul class="list-disc list-inside text-yellow-300 space-y-2">
+          <li>Tênis High Top</li>
+          <li>Tênis Chunky</li>
+          <li>Tênis Esportivos</li>
+          <li>Tênis Casuais</li>
+        </ul>
+      </div>
+
+      <!-- Aba Calças -->
+      <div id="aba-calcas" class="hidden bg-zinc-800 p-6 rounded-xl border border-yellow-600">
+        <h3 class="text-2xl font-bold text-yellow-400 mb-4">Opções de Calças</h3>
+        <ul class="list-disc list-inside text-yellow-300 space-y-2">
+          <li>Calças Cargo</li>
+          <li>Jogger Street</li>
+          <li>Calças Jeans Wide</li>
+          <li>Calças Oversized</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -99,5 +115,13 @@
       <a href="https://wa.me/5599999999999" target="_blank" rel="noopener" title="WhatsApp">📱</a>
     </div>
   </footer>
+
+  <!-- Script das abas -->
+  <script>
+    function mostrarAba(aba) {
+      document.getElementById('aba-tenis').style.display = aba === 'tenis' ? 'block' : 'none';
+      document.getElementById('aba-calcas').style.display = aba === 'calcas' ? 'block' : 'none';
+    }
+  </script>
 </body>
 </html>
