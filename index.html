@@ -130,20 +130,28 @@
     </div>
   </footer>
 
-  <!-- Script para alternar abas e mostrar mensagem -->
+  <!-- Script funcional com Tailwind -->
   <script>
     function mostrarAba(aba) {
-      document.getElementById('aba-tenis').style.display = aba === 'tenis' ? 'block' : 'none';
-      document.getElementById('aba-calcas').style.display = aba === 'calcas' ? 'block' : 'none';
-      document.getElementById('mensagem-compra').style.display = 'none';
+      const abaTenis = document.getElementById('aba-tenis');
+      const abaCalcas = document.getElementById('aba-calcas');
+      const mensagem = document.getElementById('mensagem-compra');
+
+      abaTenis.classList.add('hidden');
+      abaCalcas.classList.add('hidden');
+      mensagem.classList.add('hidden');
+
+      if (aba === 'tenis') {
+        abaTenis.classList.remove('hidden');
+      } else if (aba === 'calcas') {
+        abaCalcas.classList.remove('hidden');
+      }
     }
 
     function mostrarMensagem() {
-      document.getElementById('mensagem-compra').style.display = 'block';
-      window.scrollTo({
-        top: document.getElementById('mensagem-compra').offsetTop - 100,
-        behavior: 'smooth'
-      });
+      const mensagem = document.getElementById('mensagem-compra');
+      mensagem.classList.remove('hidden');
+      mensagem.scrollIntoView({ behavior: 'smooth' });
     }
   </script>
 </body>
