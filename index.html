@@ -63,6 +63,22 @@
     <a href="#produtos" class="inline-block text-lg px-8 py-4 bg-yellow-500 text-black hover:bg-yellow-400 transition shadow-lg rounded-full">Ver Produtos</a>
   </section>
 
+  <!-- Sobre -->
+  <section id="sobre" class="px-6 py-20 bg-zinc-900/90">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-extrabold text-yellow-400 mb-8">Sobre a StyleX</h2>
+      <p class="text-yellow-300 text-lg leading-relaxed mb-6">
+        A StyleX nasceu nas ruas, inspirada pela atitude, pela música e pela arte urbana. Somos mais que uma marca de roupas: somos uma expressão de personalidade e liberdade.
+      </p>
+      <p class="text-yellow-400 text-md leading-relaxed mb-4">
+        Aqui, cada peça é escolhida com cuidado para garantir qualidade, conforto e estilo. Nosso compromisso é entregar produtos que representem você — com autenticidade e confiança.
+      </p>
+      <p class="text-yellow-300 font-semibold">
+        Pode confiar: a StyleX veste sua identidade. Do pedido à entrega, estamos do seu lado.
+      </p>
+    </div>
+  </section>
+
   <!-- Destaques -->
   <section id="destaques" class="grid md:grid-cols-3 gap-8 px-6 py-20">
     <div class="bg-zinc-900 border border-yellow-600 shadow-md p-6 text-center rounded-xl">
@@ -122,16 +138,20 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script>
-    function mostrarMensagem() {
-      document.getElementById('mensagem-compra').classList.remove('hidden');
-      document.getElementById('mensagem-compra').scrollIntoView({ behavior: 'smooth' });
-    }
-
     function toggleContatos() {
       const painel = document.getElementById('redes-sociais');
-      painel.classList.toggle('hidden');
+      if (painel.classList.contains('hidden')) {
+        painel.classList.remove('hidden');
+      } else {
+        painel.classList.add('hidden');
+      }
+    }
+
+    function mostrarMensagem() {
+      const mensagem = document.getElementById('mensagem-compra');
+      mensagem.classList.remove('hidden');
+      mensagem.scrollIntoView({behavior: 'smooth'});
     }
   </script>
 </body>
