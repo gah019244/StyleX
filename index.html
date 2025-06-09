@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StyleX - Streetwear</title>
-
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Orbitron&family=Russo+One&display=swap" rel="stylesheet" />
   
@@ -16,14 +16,18 @@
       font-family: 'Orbitron', sans-serif;
     }
     h1, h2, h3 {
+      /* Títulos com Anton */
       font-family: 'Anton', sans-serif;
     }
     nav a, nav button {
+      /* Menu e subtítulos com Russo One */
       font-family: 'Russo One', sans-serif;
     }
     p, li {
+      /* Texto normal com Orbitron */
       font-family: 'Orbitron', sans-serif;
     }
+    /* Botões e links que quiser destacar com Bangers */
     button, a.inline-block, a:hover {
       font-family: 'Bangers', cursive;
     }
@@ -58,6 +62,7 @@
       <a href="#produtos" class="hover:text-yellow-300 transition">Produtos</a>
       <button onclick="toggleContatos()" class="hover:text-yellow-300 transition">Contato</button>
     </nav>
+    <!-- Painel de Redes Sociais -->
     <div id="redes-sociais" class="hidden absolute right-6 top-20 bg-zinc-900 border border-yellow-600 rounded-xl px-6 py-4 text-left z-50 shadow-xl">
       <p class="text-yellow-400 font-bold mb-2">Nossas redes:</p>
       <ul class="space-y-2 text-yellow-300 text-sm">
@@ -98,11 +103,11 @@
 
   <!-- Destaques -->
   <section id="destaques" class="grid md:grid-cols-3 gap-8 px-6 py-20">
-    <!-- Novo primeiro destaque com imagem personalizada e sem texto -->
     <div class="bg-zinc-900 border border-yellow-600 shadow-md p-6 text-center rounded-xl">
-      <img src="https://i.postimg.cc/yDc33Zx0/IMG-20240607-113518-570.jpg" alt="Lançamento StyleX" class="h-64 w-full object-cover rounded-xl shadow-inner" />
+      <img src="https://acdn-us.mitiendanube.com/stores/002/458/599/products/1731-a375c0b865f7dff72e16839888968653-1024-1024.png" alt="Lançamentos" class="h-48 w-full object-cover rounded-xl mb-4 shadow-inner" />
+      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">Lançamentos</h3>
+      <p class="text-yellow-300 text-sm">Confira as últimas novidades em streetwear.</p>
     </div>
-
     <div class="bg-zinc-900 border border-yellow-600 shadow-md p-6 text-center rounded-xl">
       <img src="https://cdn.awsli.com.br/600x1000/1714/1714539/produto/289387229/945b10f78b8850fa776d90ff1c0d6be9-up3xgpmon6.jpeg" alt="Mais Vendidos" class="h-48 w-full object-cover rounded-xl mb-4 shadow-inner" />
       <h3 class="text-2xl font-semibold mb-2 text-yellow-400">Mais vendidos</h3>
@@ -162,13 +167,17 @@
   <script>
     function toggleContatos() {
       const painel = document.getElementById('redes-sociais');
-      painel.classList.toggle('hidden');
+      if (painel.classList.contains('hidden')) {
+        painel.classList.remove('hidden');
+      } else {
+        painel.classList.add('hidden');
+      }
     }
 
     function mostrarMensagem() {
       const mensagem = document.getElementById('mensagem-compra');
       mensagem.classList.remove('hidden');
-      mensagem.scrollIntoView({ behavior: 'smooth' });
+      mensagem.scrollIntoView({behavior: 'smooth'});
     }
   </script>
 </body>
